@@ -21,7 +21,6 @@ import {
   Landmark,
   Newspaper,
   Check,
-  Camera,
   ArrowUpRight,
   UploadCloud,
   Trash2,
