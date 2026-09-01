@@ -1,0 +1,6 @@
+{
+  "name": "FinRev Digital Card",
+  "description": "Digital visiting card for Panchanan Kumar, Founder and Financial Advisor at FinRev Solutions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
