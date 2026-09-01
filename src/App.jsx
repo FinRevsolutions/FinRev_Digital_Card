@@ -28,6 +28,7 @@ import {
   Sparkles,
 } from 'lucide-react'
 
+import logoUrl from './assets/logo.png'
 import pkPhotoUrl from './assets/PK Photo.jpg'
 
 const BRAND = {
