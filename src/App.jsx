@@ -20,31 +20,31 @@ import {
   Building2,
   Landmark,
   Newspaper,
-  BadgeCheck,
+  Check,
   Camera,
-  ExternalLink,
-  Sparkles,
   ArrowUpRight,
-  Shield,
   UploadCloud,
   Trash2,
+  Send,
+  Sparkles,
 } from 'lucide-react'
 
 import logoUrl from './assets/logo.png'
 
 const BRAND = {
-  name: 'FinRev Solutions',
+  name: 'FINREV SOLUTIONS',
+  tagline: 'Secure Today. Stronger Tomorrow.',
   person: 'Panchanan Kumar',
   role: 'Mutual Fund Distributor',
   credential: 'AMFI Registered Mutual Fund Distributor',
   arn: 'ARN-195797',
   location: 'Dhanbad, Jharkhand, India',
-  tagline: 'Secure Today. Stronger Tomorrow.',
   phone: '+91 98355 92142',
   phoneRaw: '+919835592142',
   email: 'info@finrevsolutions.com',
-  emailSubject: 'Financial Advisory & Investment Inquiry',
+  emailSubject: 'Investment Inquiry - FinRev Solutions',
   website: 'https://www.finrevsolutions.com',
+  websiteDisplay: 'finrevsolutions.com',
   facebook: 'https://www.facebook.com/FinRevSolutions',
   whatsappNumber: '919835592142',
   cardUrl: 'https://finrevsolutions.github.io/FinRev_Digital_Card/',
@@ -57,53 +57,64 @@ const SERVICES = [
   {
     icon: TrendingUp,
     title: 'Mutual Funds & SIP',
-    description: 'Systematic wealth creation & goal-oriented portfolios',
+    description: 'Systematic goal planning & wealth creation',
   },
   {
     icon: ShieldCheck,
     title: 'Insurance',
-    description: 'Comprehensive risk coverage & financial protection',
+    description: 'Comprehensive risk & financial protection',
   },
   {
     icon: Link2,
     title: 'Bonds',
-    description: 'Stable fixed income & capital preservation instruments',
+    description: 'Stable fixed income & capital preservation',
   },
   {
     icon: PieChart,
     title: 'PMS',
-    description: 'Bespoke Portfolio Management Services for HNIs',
+    description: 'Bespoke Portfolio Management for HNIs',
   },
   {
     icon: Briefcase,
     title: 'AIF',
-    description: 'Alternative Investment Funds for diversified alpha',
+    description: 'Alternative Investment Funds for alpha',
   },
   {
     icon: Building2,
     title: 'Unlisted Equity',
-    description: 'Pre-IPO & high-growth private market opportunities',
+    description: 'Pre-IPO & high-growth private opportunities',
   },
   {
     icon: Landmark,
     title: 'Fixed Deposits',
-    description: 'Corporate & bank FDs with guaranteed returns',
+    description: 'Corporate & bank FDs with assured safety',
   },
   {
     icon: Newspaper,
     title: 'Book Newspapers Ads',
-    description: 'Seamless financial & statutory newspaper notices',
+    description: 'Statutory notices & public publications',
   },
 ]
 
 const mailtoHref = `mailto:${BRAND.email}?subject=${encodeURIComponent(BRAND.emailSubject)}`
 const waChatHref = `https://wa.me/${BRAND.whatsappNumber}?text=${encodeURIComponent(
-  'Hi Panchanan, I would like to discuss financial planning and investment services.',
+  'Hi Panchanan, I would like to explore financial advisory and investment solutions.',
 )}`
 
-const SEND_CARD_MESSAGE = `Hi, this is *${BRAND.person}* from *${BRAND.name}* (${BRAND.credential} · ${BRAND.arn}).\n\nHere is my digital visiting card:\n${BRAND.cardUrl}`
+const PROFESSIONAL_WHATSAPP_MESSAGE = `Hello,
 
-function WhatsAppIcon({ className = 'h-5 w-5' }) {
+I'm Panchanan Kumar, Mutual Fund Distributor at FinRev Solutions.
+
+Please find my digital visiting card and professional profile below:
+
+FinRev Solutions
+Secure Today. Stronger Tomorrow.
+
+${BRAND.cardUrl}`
+
+const SEND_CARD_MESSAGE = PROFESSIONAL_WHATSAPP_MESSAGE
+
+function WhatsAppIcon({ className = 'h-4 w-4' }) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -114,6 +125,22 @@ function WhatsAppIcon({ className = 'h-5 w-5' }) {
     >
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
     </svg>
+  )
+}
+
+function SectionDivider({ title }) {
+  return (
+    <div className="relative my-1 flex items-center justify-center">
+      <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#C3CFD2]/80 to-transparent" />
+      <div className="flex items-center gap-1.5 px-3">
+        <span className="h-1 w-1 rounded-full bg-[#1B4F57]" />
+        <h2 className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#163744]">
+          {title}
+        </h2>
+        <span className="h-1 w-1 rounded-full bg-[#1B4F57]" />
+      </div>
+      <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#C3CFD2]/80 to-transparent" />
+    </div>
   )
 }
 
@@ -129,23 +156,18 @@ export default function App() {
 
   const toastTimer = useRef(null)
   const fileInputRef = useRef(null)
-  const qrCloseRef = useRef(null)
 
-  // Load custom user profile photo if stored
   useEffect(() => {
     setMounted(true)
     try {
-      const savedPhoto = localStorage.getItem('finrev_profile_photo')
-      if (savedPhoto) {
-        setCustomPhoto(savedPhoto)
-      }
+      const saved = localStorage.getItem('finrev_profile_photo')
+      if (saved) setCustomPhoto(saved)
     } catch {
       // Storage fallback
     }
     return () => clearTimeout(toastTimer.current)
   }, [])
 
-  // QR modal accessibility & keyboard trap
   useEffect(() => {
     if (!qrOpen && !photoModalOpen) return
     const onKey = (event) => {
@@ -166,18 +188,16 @@ export default function App() {
   const showToast = (message) => {
     setToast(message)
     clearTimeout(toastTimer.current)
-    toastTimer.current = setTimeout(() => setToast(''), 2400)
+    toastTimer.current = setTimeout(() => setToast(''), 2500)
   }
 
   const handlePhotoUpload = (e) => {
     const file = e.target.files?.[0]
     if (!file) return
-
     if (!file.type.startsWith('image/')) {
-      showToast('Please select a valid image file')
+      showToast('Please select an image file')
       return
     }
-
     const reader = new FileReader()
     reader.onload = (event) => {
       const dataUrl = event.target?.result
@@ -186,7 +206,7 @@ export default function App() {
         try {
           localStorage.setItem('finrev_profile_photo', dataUrl)
         } catch {
-          // Ignore quota errors for large images
+          // Quota handling
         }
         showToast('Profile photo updated')
         setPhotoModalOpen(false)
@@ -202,7 +222,7 @@ export default function App() {
     } catch {
       // Storage fallback
     }
-    showToast('Photo reset to monogram')
+    showToast('Photo reset')
     setPhotoModalOpen(false)
   }
 
@@ -226,20 +246,18 @@ export default function App() {
     const url = window.URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = url
-    link.download = 'Panchanan_Kumar_FinRev_Solutions.vcf'
+    link.download = 'Panchanan_Kumar_FinRev.vcf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
     window.URL.revokeObjectURL(url)
-    showToast('vCard downloaded successfully')
+    showToast('Contact vCard saved to device')
   }
 
   const shareWhatsApp = () => {
-    const message = encodeURIComponent(
-      `*${BRAND.person}* · ${BRAND.role}\n*${BRAND.name}*\n${BRAND.credential} (${BRAND.arn})\n\nView official digital visiting card:\n${BRAND.cardUrl}`,
-    )
+    const message = encodeURIComponent(PROFESSIONAL_WHATSAPP_MESSAGE)
     window.open(`https://wa.me/?text=${message}`, '_blank')
-    showToast('Sharing on WhatsApp…')
+    showToast('Opening WhatsApp…')
   }
 
   const copyLink = async () => {
@@ -260,22 +278,21 @@ export default function App() {
       setTimeout(() => setCopied(false), 2400)
       showToast('Link copied to clipboard')
     } catch {
-      showToast('Failed to copy link')
+      showToast('Could not copy link')
     }
   }
 
-  const shareCard = async () => {
+  const shareNative = async () => {
     const shareData = {
       title: `${BRAND.person} | ${BRAND.name}`,
-      text: `${BRAND.person} - ${BRAND.role} at ${BRAND.name} (${BRAND.arn})`,
+      text: `${BRAND.person} - ${BRAND.role} (${BRAND.arn})`,
       url: BRAND.cardUrl,
     }
-
     if (typeof navigator.share === 'function') {
       try {
         await navigator.share(shareData)
       } catch {
-        // User dismissed sheet
+        // Dismissed
       }
     } else {
       await copyLink()
@@ -306,7 +323,7 @@ export default function App() {
       return
     }
     if (!/^[6-9]/.test(digits)) {
-      setPhoneError('Indian mobile numbers start with 6, 7, 8, or 9')
+      setPhoneError('Indian numbers start with 6, 7, 8, or 9')
       return
     }
 
@@ -314,168 +331,82 @@ export default function App() {
     const message = encodeURIComponent(SEND_CARD_MESSAGE)
     const url = `https://wa.me/91${digits}?text=${message}`
     window.open(url, '_blank')
-    showToast(`Dispatching to WhatsApp (+91 ${digits})`)
+    showToast(`Sending to WhatsApp (+91 ${digits})`)
   }
 
-  const primaryActions = [
-    {
-      id: 'action-call',
-      href: `tel:${BRAND.phoneRaw}`,
-      label: 'Call',
-      subtitle: '+91 98355 92142',
-      icon: Phone,
-      external: false,
-      color: 'bg-brand-navyDeep text-white border-brand-navyBorder hover:border-brand-teal',
-      iconBg: 'bg-brand-teal text-white',
-    },
-    {
-      id: 'action-whatsapp',
-      href: waChatHref,
-      label: 'WhatsApp',
-      subtitle: 'Chat on WhatsApp',
-      icon: WhatsAppIcon,
-      external: true,
-      color: 'bg-brand-navyDeep text-white border-brand-navyBorder hover:border-[#25D366]/60',
-      iconBg: 'bg-[#25D366] text-white',
-    },
-  ]
-
-  const secondaryActions = [
-    {
-      id: 'action-email',
-      href: mailtoHref,
-      label: 'Email',
-      icon: Mail,
-      external: false,
-    },
-    {
-      id: 'action-website',
-      href: BRAND.website,
-      label: 'Website',
-      icon: Globe,
-      external: true,
-    },
-    {
-      id: 'action-facebook',
-      href: BRAND.facebook,
-      label: 'Facebook',
-      icon: Facebook,
-      external: true,
-    },
-  ]
-
-  const contactRows = [
-    {
-      id: 'info-phone',
-      icon: Phone,
-      label: 'Direct Phone',
-      value: BRAND.phone,
-      href: `tel:${BRAND.phoneRaw}`,
-      external: false,
-      actionText: 'Call',
-    },
-    {
-      id: 'info-whatsapp',
-      icon: WhatsAppIcon,
-      label: 'WhatsApp Contact',
-      value: BRAND.phone,
-      href: waChatHref,
-      external: true,
-      actionText: 'Chat',
-    },
-    {
-      id: 'info-email',
-      icon: Mail,
-      label: 'Official Email',
-      value: BRAND.email,
-      href: mailtoHref,
-      external: false,
-      actionText: 'Write',
-    },
-    {
-      id: 'info-website',
-      icon: Globe,
-      label: 'Corporate Website',
-      value: 'www.finrevsolutions.com',
-      href: BRAND.website,
-      external: true,
-      actionText: 'Visit',
-    },
-    {
-      id: 'info-location',
-      icon: MapPin,
-      label: 'Headquarters & Location',
-      value: BRAND.location,
-      href: undefined,
-      external: false,
-    },
-    {
-      id: 'info-arn',
-      icon: BadgeCheck,
-      label: 'AMFI Registration (ARN)',
-      value: `${BRAND.arn} · Verified Distributor`,
-      href: undefined,
-      external: false,
-    },
-  ]
-
   return (
-    <div className="min-h-screen bg-[#0A0E17] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(47,105,115,0.25),rgba(10,14,23,1))] font-sans text-brand-ink antialiased selection:bg-brand-teal selection:text-white">
-      {/* 9:16 Mobile-First Card Container */}
-      <div className="flex min-h-screen items-center justify-center p-0 sm:py-6 md:py-10">
-        <div
+    <div className="min-h-screen bg-[#0C1928] font-sans text-[#162B3A] antialiased selection:bg-[#1B4F57] selection:text-white">
+      {/* Background Subtle Gradient & Ambience */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-[#163744]/25 rounded-full blur-[140px]" />
+        <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-[#1B4F57]/15 rounded-full blur-[130px]" />
+      </div>
+
+      {/* 9:16 Mobile-First Executive Card Container (Level 1 Surface) */}
+      <div className="relative min-h-screen flex items-center justify-center p-0 sm:py-8 md:py-10">
+        <main
           id="digital-card-container"
-          className={`relative mx-auto flex w-full max-w-[430px] flex-col overflow-hidden bg-[#0F1422] shadow-[0_25px_70px_-15px_rgba(0,0,0,0.85)] transition-opacity duration-500 sm:rounded-[2.75rem] sm:border sm:border-slate-800/80 ${
+          className={`card-elevation-1 relative w-full max-w-[440px] bg-[#FBFCFD] transition-opacity duration-300 sm:rounded-[32px] sm:border sm:border-[#C3CFD2]/70 overflow-hidden ${
             mounted ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          {/* Subtle Ambient Radial Glow */}
-          <div className="pointer-events-none absolute -top-24 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-brand-teal/20 blur-[90px]" />
-          <div className="pointer-events-none absolute top-[38%] right-0 h-56 w-56 rounded-full bg-brand-tealGlow/10 blur-[80px]" />
-
           {/* ========================================================
-              1. HEADER / PROFILE (Strict Hierarchy)
-              [ FINREV SOLUTIONS LOGO ]
-              [ MY PROFILE PHOTO ]
-              Panchanan Kumar
+              1. NEW PREMIUM FULL-WIDTH HERO HEADER & OVERLAPPING PROFILE
+              Hierarchy:
+              Deep FinRev Teal Hero (Full-width, Solid #1B4F57)
+                ↳ [FINREV LOGO] | FINREV SOLUTIONS / Tagline (White Lockup)
+              ↓
+              Overlapping Profile Photo (50% in Teal, 50% in White)
+              ↓
+              PANCHANAN KUMAR
+              ↓
               Mutual Fund Distributor
-              AMFI Registered Mutual Fund Distributor
+              ↓
+              AMFI Registered Mutual Fund Distributor • ARN-195797
               ======================================================== */}
-          <header className="relative z-10 px-5 pt-7 pb-6 text-center">
-            {/* Top Bar with FinRev Verified Indicator */}
-            <div className="mb-5 flex items-center justify-between px-1">
-              <div className="inline-flex items-center gap-1.5 rounded-full border border-teal-500/30 bg-brand-teal/15 px-3 py-1 text-[11px] font-medium tracking-wide text-brand-tealLight backdrop-blur-md">
-                <Shield className="h-3 w-3 text-brand-tealLight" strokeWidth={2.5} />
-                <span>Verified Distributor</span>
+          <header className="text-center bg-[#FBFCFD] pb-4">
+            {/* Full-width Deep FinRev Teal (#1B4F57) Hero Section */}
+            <div className="w-full bg-[#1B4F57] pt-7 sm:pt-8 pb-14 px-6 text-white relative shadow-[0_4px_16px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.18)]">
+              {/* Subtle top ambient glow */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-white/10 rounded-full blur-xl pointer-events-none" />
+
+              {/* Corporate Brand Lockup (Logo on Left + White Typography on Right) */}
+              <div className="flex items-center justify-center gap-3 sm:gap-3.5 text-left">
+                {/* Official FinRev Logo on the LEFT (Clean white surface for maximum clarity and brand fidelity) */}
+                <div className="flex-shrink-0 rounded-lg bg-white p-1.5 shadow-[0_2px_6px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,1)] border border-white/40 flex items-center justify-center">
+                  <img
+                    src={logoUrl}
+                    alt="FinRev Solutions Logo"
+                    width="140"
+                    height="48"
+                    className="h-7 sm:h-8 w-auto max-w-[72px] object-contain"
+                  />
+                </div>
+
+                {/* Subtle Vertical Divider */}
+                <div className="h-8 w-[1px] bg-white/25 flex-shrink-0" />
+
+                {/* Brand Name & Slogan on the RIGHT */}
+                <div className="flex flex-col justify-center min-w-0">
+                  <span className="text-[15px] sm:text-[16px] font-extrabold uppercase tracking-[0.14em] text-white leading-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.2)]">
+                    FINREV SOLUTIONS
+                  </span>
+                  <span className="mt-0.5 text-[10px] sm:text-[10.5px] font-medium tracking-[0.03em] text-[#EEF2F3]/90 leading-tight">
+                    Secure Today. Stronger Tomorrow.
+                  </span>
+                </div>
               </div>
-              <button
-                type="button"
-                id="header-qr-button"
-                onClick={() => setQrOpen(true)}
-                aria-label="Open QR Code"
-                className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition-colors hover:border-brand-tealLight/50 hover:bg-brand-teal/20 hover:text-white"
-              >
-                <QrCode className="h-4 w-4" strokeWidth={2} />
-              </button>
             </div>
 
-            {/* Official FINREV SOLUTIONS Logo Card */}
-            <div className="mx-auto w-fit rounded-2xl border border-white/15 bg-white p-3.5 shadow-logo transition-transform duration-300 hover:scale-[1.02]">
-              <img
-                src={logoUrl}
-                alt="FinRev Solutions Official Logo"
-                width="210"
-                height="150"
-                className="h-14 w-auto object-contain sm:h-16"
-              />
-            </div>
-
-            {/* Profile Photo DIRECTLY BELOW THE LOGO */}
-            <div className="relative mt-6 flex justify-center">
+            {/* Profile Photo OVERLAPPING the boundary (50% in Teal, 50% in White) */}
+            <div className="relative -mt-12 flex justify-center z-20">
               <div className="relative group">
-                {/* Refined concentric teal border ring with soft glow */}
-                <div className="relative h-24 w-24 overflow-hidden rounded-full p-[3px] bg-gradient-to-tr from-brand-teal via-brand-tealLight to-brand-tealGlow shadow-[0_10px_25px_-5px_rgba(47,105,115,0.6)]">
-                  <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-[#161C2E]">
+                {/* Subtle soft backdrop depth */}
+                <div className="absolute inset-0 rounded-full bg-[#1B4F57]/15 blur-md transform scale-110" />
+
+                {/* 100px Circular Portrait with White/Teal Frame & 3D Layered Shadow */}
+                <div className="relative h-[100px] w-[100px] rounded-full border-[4px] border-[#FBFCFD] p-[1.5px] bg-[#1B4F57] shadow-[0_10px_25px_-5px_rgba(27,79,87,0.38),0_4px_10px_rgba(0,0,0,0.15)]">
+                  <div className="h-full w-full rounded-full overflow-hidden bg-[#EEF2F3] flex items-center justify-center">
                     {customPhoto ? (
                       <img
                         src={customPhoto}
@@ -483,34 +414,34 @@ export default function App() {
                         className="h-full w-full object-cover object-center"
                       />
                     ) : (
-                      /* Dignified High-End Monogram Profile Avatar */
-                      <div className="flex h-full w-full flex-col items-center justify-center bg-gradient-to-b from-[#1C253B] to-[#121828] text-white">
-                        <span className="text-2xl font-extrabold tracking-wider text-brand-tealLight">
+                      /* Executive Monogram Profile fallback */
+                      <div className="flex h-full w-full flex-col items-center justify-center bg-gradient-to-b from-[#EEF2F3] to-[#DFE7EA]">
+                        <span className="text-2xl font-bold tracking-wider text-[#1B4F57]">
                           PK
                         </span>
-                        <span className="text-[9px] font-semibold uppercase tracking-widest text-slate-400">
-                          FinRev
+                        <span className="text-[8px] font-bold uppercase tracking-widest text-[#6C8085]">
+                          FINREV
                         </span>
                       </div>
                     )}
                   </div>
                 </div>
 
-                {/* Upload / Change Photo Trigger Icon */}
+                {/* Subtle tactile photo upload trigger */}
                 <button
                   type="button"
                   id="profile-photo-trigger"
                   onClick={() => setPhotoModalOpen(true)}
-                  aria-label="Upload or update profile photo"
+                  aria-label="Update profile photo"
                   title="Upload profile photo"
-                  className="absolute bottom-0 right-0 flex h-7 w-7 items-center justify-center rounded-full border border-[#0F1422] bg-brand-teal text-white shadow-md transition-transform duration-200 hover:scale-110 hover:bg-brand-tealGlow active:scale-95"
+                  className="btn-tactile-teal absolute bottom-0 right-0 flex h-7 w-7 items-center justify-center rounded-full bg-[#1B4F57] text-white border-2 border-[#FBFCFD] shadow-md transition"
                 >
                   <Camera className="h-3.5 w-3.5" strokeWidth={2.2} />
                 </button>
               </div>
             </div>
 
-            {/* Hidden Real File Input for Photo Upload */}
+            {/* Hidden file input */}
             <input
               ref={fileInputRef}
               type="file"
@@ -519,147 +450,170 @@ export default function App() {
               onChange={handlePhotoUpload}
             />
 
-            {/* Name & Credentials */}
-            <div className="mt-4">
-              <h1 className="text-2xl font-extrabold tracking-tight text-white sm:text-[1.7rem]">
+            {/* Exact Profile Typography Hierarchy */}
+            <div className="mt-3 px-6">
+              <h1 className="text-[23px] sm:text-[25px] font-bold tracking-tight text-[#163744]">
                 {BRAND.person}
               </h1>
-              <p className="mt-1 text-sm font-semibold tracking-wide text-brand-tealLight">
+              <p className="mt-0.5 text-xs font-semibold tracking-wide text-[#1B4F57]">
                 {BRAND.role}
               </p>
 
-              {/* AMFI Registered Badge */}
-              <div className="mt-3.5 inline-flex items-center gap-1.5 rounded-full border border-brand-teal/40 bg-brand-teal/15 px-3.5 py-1 text-xs font-semibold tracking-wide text-brand-tealLight backdrop-blur-sm">
-                <BadgeCheck className="h-4 w-4 text-brand-tealLight" strokeWidth={2.2} />
-                <span>{BRAND.credential}</span>
-                <span className="text-white/40">|</span>
-                <span className="text-white font-mono text-[11px]">{BRAND.arn}</span>
+              {/* AMFI Registered Mutual Fund Distributor */}
+              <div className="mt-2.5 inline-flex items-center gap-1.5 rounded-full border border-[#C3CFD2] bg-[#EEF2F3] px-3.5 py-1 text-[11px] font-medium text-[#163744] shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]">
+                <Check className="h-3.5 w-3.5 text-[#1B4F57] stroke-[2.5]" />
+                <span className="font-semibold">{BRAND.credential}</span>
+                <span className="text-[#6C8085]">•</span>
+                <span className="font-mono font-semibold text-[#1B4F57]">{BRAND.arn}</span>
               </div>
 
               {/* Location */}
-              <div className="mt-2.5 flex items-center justify-center gap-1.5 text-xs text-slate-400">
-                <MapPin className="h-3.5 w-3.5 text-brand-tealLight/80" strokeWidth={2} />
+              <div className="mt-2 flex items-center justify-center gap-1 text-[11px] text-[#6C8085]">
+                <MapPin className="h-3 w-3 text-[#1B4F57]" />
                 <span>{BRAND.location}</span>
               </div>
             </div>
           </header>
 
           {/* ========================================================
-              BODY CONTENT (Light / Crisp Wealth Management Canvas)
+              CARD CONTENT BODY
               ======================================================== */}
-          <main className="relative z-10 flex-1 rounded-t-[2.25rem] bg-brand-canvas px-4 pt-6 pb-8 shadow-inner sm:px-5">
+          <div className="px-5 pb-6 space-y-4">
             {/* ========================================================
-                2. PRIMARY ACTIONS & SAVE CONTACT
-                Primary: CALL, WHATSAPP, SAVE CONTACT (Major CTA)
-                Secondary: EMAIL, WEBSITE, FACEBOOK
+                2. ACTION BUTTONS (Level 3 & 4 Surfaces)
+                Primary CTA: SAVE CONTACT (FinRev Teal, 3D Depth)
+                Contact Actions: Call, WhatsApp, Email (Tactile White Cards)
+                Secondary: Visit Website, Facebook Page
                 ======================================================== */}
-            <section id="primary-actions" aria-label="Primary contact actions">
-              {/* Call & WhatsApp Tiles */}
-              <div className="grid grid-cols-2 gap-3">
-                {primaryActions.map((action) => {
-                  const Icon = action.icon
-                  return (
-                    <a
-                      key={action.id}
-                      id={action.id}
-                      href={action.href}
-                      {...(action.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                      className="group relative flex items-center gap-3 overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-3.5 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-teal/50 hover:shadow-card-hover active:scale-[0.98]"
-                    >
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-tealSoft text-brand-teal transition-colors duration-200 group-hover:bg-brand-teal group-hover:text-white">
-                        <Icon className="h-5 w-5" strokeWidth={2.1} />
-                      </div>
-                      <div className="min-w-0 flex-1 text-left">
-                        <span className="block text-xs font-semibold uppercase tracking-wider text-brand-muted">
-                          {action.label}
-                        </span>
-                        <span className="block truncate text-xs font-bold text-brand-ink">
-                          {action.subtitle}
-                        </span>
-                      </div>
-                      <ArrowUpRight className="h-4 w-4 shrink-0 text-slate-300 transition-colors group-hover:text-brand-teal" />
-                    </a>
-                  )
-                })}
-              </div>
-
-              {/* SAVE CONTACT (Major Premium CTA) */}
+            <section id="action-system" aria-label="Contact actions" className="space-y-2">
+              {/* SAVE CONTACT (Primary Tactile CTA in FinRev Teal #1B4F57) */}
               <button
                 type="button"
                 id="save-contact-cta"
                 onClick={downloadContact}
-                className="group relative mt-3 flex w-full items-center justify-center gap-3 overflow-hidden rounded-2xl bg-gradient-to-r from-brand-navyDeep via-brand-navy to-[#1B243B] p-4 text-white shadow-cta transition-all duration-200 hover:shadow-[0_14px_30px_-6px_rgba(22,28,46,0.6)] hover:brightness-110 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal focus-visible:ring-offset-2"
+                className="btn-tactile-teal group relative flex w-full items-center justify-center gap-2.5 rounded-xl bg-[#1B4F57] py-3.5 px-4 text-white focus:outline-none"
               >
-                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(110deg,transparent,rgba(133,186,194,0.15),transparent)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-brand-teal text-white shadow-sm transition-transform duration-200 group-hover:scale-110">
-                  <Download className="h-4 w-4" strokeWidth={2.4} />
-                </div>
-                <span className="text-base font-bold tracking-wide">SAVE CONTACT</span>
-                <span className="rounded-full bg-white/15 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-brand-tealLight">
+                <Download className="h-4 w-4" strokeWidth={2.4} />
+                <span className="text-xs font-bold uppercase tracking-wider text-white">
+                  SAVE CONTACT
+                </span>
+                <span className="rounded bg-white/20 px-1.5 py-0.5 text-[9px] font-semibold text-white">
                   vCard
                 </span>
               </button>
 
-              {/* Secondary Actions (Email, Website, Facebook) */}
-              <div className="mt-3 grid grid-cols-3 gap-2">
-                {secondaryActions.map((action) => {
-                  const Icon = action.icon
-                  return (
-                    <a
-                      key={action.id}
-                      id={action.id}
-                      href={action.href}
-                      {...(action.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                      className="group flex flex-col items-center justify-center rounded-xl border border-slate-200/80 bg-white py-2.5 px-2 text-center shadow-subtle transition-all duration-200 hover:border-brand-teal/40 hover:bg-brand-tealSoft/40 hover:shadow-card active:scale-[0.97]"
-                    >
-                      <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-slate-100 text-brand-inkSecondary transition-colors duration-200 group-hover:bg-brand-teal group-hover:text-white">
-                        <Icon className="h-3.5 w-3.5" strokeWidth={2} />
-                      </div>
-                      <span className="mt-1.5 text-[11px] font-bold text-brand-inkSecondary group-hover:text-brand-ink">
-                        {action.label}
-                      </span>
-                    </a>
-                  )
-                })}
+              {/* Contact Actions Row: Call, WhatsApp, Email */}
+              <div className="grid grid-cols-3 gap-2">
+                {/* Call */}
+                <a
+                  id="action-call"
+                  href={`tel:${BRAND.phoneRaw}`}
+                  className="card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border border-[#C3CFD2]/80 bg-[#FBFCFD] py-2.5 px-2 text-center"
+                >
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#EEF2F3] text-[#1B4F57] transition-colors group-hover:bg-[#1B4F57] group-hover:text-white shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
+                    <Phone className="h-4 w-4" strokeWidth={2.2} />
+                  </div>
+                  <span className="mt-1.5 text-[11px] font-bold text-[#162B3A]">
+                    Call
+                  </span>
+                  <span className="text-[9px] text-[#6C8085] truncate max-w-full">
+                    Direct
+                  </span>
+                </a>
+
+                {/* WhatsApp */}
+                <a
+                  id="action-whatsapp"
+                  href={waChatHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border border-[#C3CFD2]/80 bg-[#FBFCFD] py-2.5 px-2 text-center"
+                >
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#EEF2F3] text-[#1B4F57] transition-colors group-hover:bg-[#1B4F57] group-hover:text-white shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
+                    <WhatsAppIcon className="h-4 w-4" />
+                  </div>
+                  <span className="mt-1.5 text-[11px] font-bold text-[#162B3A]">
+                    WhatsApp
+                  </span>
+                  <span className="text-[9px] text-[#6C8085] truncate max-w-full">
+                    Chat
+                  </span>
+                </a>
+
+                {/* Email */}
+                <a
+                  id="action-email"
+                  href={mailtoHref}
+                  className="card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border border-[#C3CFD2]/80 bg-[#FBFCFD] py-2.5 px-2 text-center"
+                >
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#EEF2F3] text-[#1B4F57] transition-colors group-hover:bg-[#1B4F57] group-hover:text-white shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
+                    <Mail className="h-4 w-4" strokeWidth={2.2} />
+                  </div>
+                  <span className="mt-1.5 text-[11px] font-bold text-[#162B3A]">
+                    Email
+                  </span>
+                  <span className="text-[9px] text-[#6C8085] truncate max-w-full">
+                    Inquiry
+                  </span>
+                </a>
+              </div>
+
+              {/* Secondary: Website & Facebook */}
+              <div className="grid grid-cols-2 gap-2">
+                <a
+                  id="action-website"
+                  href={BRAND.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-tactile-secondary group flex items-center justify-center gap-2 rounded-xl border border-[#C3CFD2]/80 bg-[#FBFCFD] py-2 px-3 text-center"
+                >
+                  <Globe className="h-3.5 w-3.5 text-[#1B4F57]" />
+                  <span className="text-[11px] font-semibold text-[#162B3A]">
+                    Visit Website
+                  </span>
+                  <ArrowUpRight className="h-3 w-3 text-[#6C8085] group-hover:text-[#1B4F57]" />
+                </a>
+
+                <a
+                  id="action-facebook"
+                  href={BRAND.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-tactile-secondary group flex items-center justify-center gap-2 rounded-xl border border-[#C3CFD2]/80 bg-[#FBFCFD] py-2 px-3 text-center"
+                >
+                  <Facebook className="h-3.5 w-3.5 text-[#1B4F57]" />
+                  <span className="text-[11px] font-semibold text-[#162B3A]">
+                    Facebook Page
+                  </span>
+                  <ArrowUpRight className="h-3 w-3 text-[#6C8085] group-hover:text-[#1B4F57]" />
+                </a>
               </div>
             </section>
 
             {/* ========================================================
-                3. OUR SERVICES (ONLY THE 8 SPECIFIED SERVICES)
-                2-Column Mobile Grid · Compact & Elegant
+                3. OUR SERVICES (Editorial Header + 2-Column Tactile Cards)
+                ONLY THE 8 SERVICES
                 ======================================================== */}
-            <section id="services-section" aria-label="Our services" className="mt-8">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-brand-teal">
-                    Investment Solutions
-                  </p>
-                  <h2 className="mt-0.5 text-lg font-extrabold text-brand-navy">
-                    Our Services
-                  </h2>
-                </div>
-                <span className="rounded-full bg-brand-tealSoft px-2.5 py-1 text-[11px] font-bold text-brand-teal">
-                  8 Offerings
-                </span>
-              </div>
+            <section id="services-section" aria-label="Our services" className="pt-2">
+              <SectionDivider title="Our Services" />
 
-              <div className="mt-3.5 grid grid-cols-2 gap-2.5">
+              <div className="mt-3 grid grid-cols-2 gap-2">
                 {SERVICES.map((service, idx) => {
                   const Icon = service.icon
                   return (
                     <div
                       key={service.title}
                       id={`service-card-${idx + 1}`}
-                      className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-3.5 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-teal/40 hover:shadow-card-hover"
+                      className="card-elevation-interactive group flex flex-col justify-between rounded-xl border border-[#C3CFD2]/80 bg-[#FBFCFD] p-3"
                     >
                       <div>
-                        <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-tealSoft text-brand-teal transition-all duration-200 group-hover:bg-brand-teal group-hover:text-white">
-                          <Icon className="h-[18px] w-[18px]" strokeWidth={2.1} />
+                        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#EEF2F3] text-[#1B4F57] transition-colors group-hover:bg-[#1B4F57] group-hover:text-white shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
+                          <Icon className="h-4 w-4" strokeWidth={2.2} />
                         </div>
-                        <h3 className="mt-2.5 text-xs font-bold leading-tight text-brand-ink">
+                        <h3 className="mt-2.5 text-xs font-bold leading-tight text-[#163744] group-hover:text-[#1B4F57] transition-colors">
                           {service.title}
                         </h3>
-                        <p className="mt-1 text-[10px] leading-relaxed text-brand-muted line-clamp-2">
+                        <p className="mt-1 text-[10px] leading-relaxed text-[#6C8085] line-clamp-2">
                           {service.description}
                         </p>
                       </div>
@@ -670,104 +624,97 @@ export default function App() {
             </section>
 
             {/* ========================================================
-                4. SEND MY CARD (Instant WhatsApp Forwarding)
-                Validates 10-digit Indian Mobile Number (+91)
+                4. SEND MY CARD (Level 2 Panel in #EEF2F3)
+                +91 | Enter mobile number -> Send on WhatsApp
                 ======================================================== */}
-            <section id="send-card-section" aria-label="Send my card" className="mt-8">
-              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#111728] via-[#161F33] to-[#0F1424] p-5 text-white shadow-panel">
-                {/* Background lighting */}
-                <div className="pointer-events-none absolute -right-8 -top-8 h-36 w-36 rounded-full bg-brand-teal/20 blur-2xl" />
+            <section id="send-card-section" aria-label="Send my card" className="pt-2">
+              <SectionDivider title="Send My Card" />
 
-                <div className="relative z-10">
-                  <div className="flex items-center gap-2">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-teal text-white">
-                      <Sparkles className="h-3.5 w-3.5" />
-                    </span>
-                    <h2 className="text-sm font-extrabold uppercase tracking-wider text-white">
-                      SEND MY CARD
-                    </h2>
+              <div className="card-elevation-panel mt-3 rounded-2xl border border-[#C3CFD2] bg-[#EEF2F3] p-4">
+                <div className="flex items-center gap-2.5">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#1B4F57] text-white shadow-sm">
+                    <Send className="h-3.5 w-3.5" />
                   </div>
-                  <p className="mt-1 text-xs text-slate-300">
-                    Send this digital card directly to any WhatsApp number in India.
-                  </p>
-
-                  <form onSubmit={sendOnWhatsApp} className="mt-4">
-                    <label htmlFor="recipient-mobile" className="sr-only">
-                      Recipient Mobile Number
-                    </label>
-                    <div className="flex items-stretch overflow-hidden rounded-xl border border-white/15 bg-white/10 backdrop-blur-md transition-all focus-within:border-brand-tealLight focus-within:ring-2 focus-within:ring-brand-tealLight/40">
-                      <span className="flex select-none items-center gap-1 border-r border-white/15 bg-white/5 px-3.5 text-xs font-bold text-brand-tealLight">
-                        +91
-                      </span>
-                      <input
-                        id="recipient-mobile"
-                        name="recipient-mobile"
-                        type="tel"
-                        inputMode="numeric"
-                        autoComplete="tel-national"
-                        placeholder="Enter 10-digit mobile number"
-                        value={phone}
-                        onChange={handlePhoneChange}
-                        maxLength={10}
-                        className="w-full min-w-0 bg-transparent px-3 py-3 text-sm font-medium tracking-wide text-white outline-none placeholder:text-slate-400"
-                      />
-                      {phone && (
-                        <button
-                          type="button"
-                          onClick={() => setPhone('')}
-                          className="px-3 text-slate-400 hover:text-white"
-                          aria-label="Clear mobile number"
-                        >
-                          <X className="h-4 w-4" />
-                        </button>
-                      )}
-                    </div>
-
-                    {phoneError && (
-                      <p role="alert" className="mt-2 text-xs font-medium text-rose-300">
-                        {phoneError}
-                      </p>
-                    )}
-
-                    <button
-                      type="submit"
-                      id="send-whatsapp-submit"
-                      className="mt-3 flex w-full items-center justify-center gap-2 rounded-xl bg-brand-teal py-3 text-xs font-bold uppercase tracking-wider text-white shadow-cta-teal transition-all duration-200 hover:bg-brand-tealGlow hover:brightness-110 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-tealLight"
-                    >
-                      <WhatsAppIcon className="h-4 w-4" />
-                      <span>Send on WhatsApp</span>
-                    </button>
-                  </form>
+                  <div>
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#163744]">
+                      Instant WhatsApp Dispatch
+                    </h3>
+                    <p className="text-[10px] text-[#6C8085]">
+                      Forward this digital card directly to any mobile number
+                    </p>
+                  </div>
                 </div>
+
+                <form onSubmit={sendOnWhatsApp} className="mt-3">
+                  <label htmlFor="recipient-mobile" className="sr-only">
+                    Mobile number
+                  </label>
+                  <div className="input-tactile flex items-stretch overflow-hidden rounded-xl border border-[#C3CFD2] bg-[#FBFCFD] transition focus-within:border-[#1B4F57] focus-within:ring-1 focus-within:ring-[#1B4F57]">
+                    <span className="flex select-none items-center border-r border-[#C3CFD2] bg-[#F4F7F8] px-3 text-xs font-bold text-[#163744]">
+                      +91
+                    </span>
+                    <input
+                      id="recipient-mobile"
+                      type="tel"
+                      inputMode="numeric"
+                      autoComplete="tel-national"
+                      placeholder="Enter mobile number"
+                      value={phone}
+                      onChange={handlePhoneChange}
+                      maxLength={10}
+                      className="w-full bg-transparent px-3 py-2.5 text-xs font-medium text-[#162B3A] outline-none placeholder:text-[#6C8085]"
+                    />
+                    {phone && (
+                      <button
+                        type="button"
+                        onClick={() => setPhone('')}
+                        className="px-2.5 text-[#6C8085] hover:text-[#162B3A]"
+                        aria-label="Clear number"
+                      >
+                        <X className="h-3.5 w-3.5" />
+                      </button>
+                    )}
+                  </div>
+
+                  {phoneError && (
+                    <p role="alert" className="mt-1.5 text-[11px] font-medium text-rose-600">
+                      {phoneError}
+                    </p>
+                  )}
+
+                  <button
+                    type="submit"
+                    id="send-whatsapp-submit"
+                    className="btn-tactile-teal mt-2.5 flex w-full items-center justify-center gap-2 rounded-xl bg-[#1B4F57] py-2.5 px-3 text-xs font-bold uppercase tracking-wider text-white"
+                  >
+                    <WhatsAppIcon className="h-3.5 w-3.5" />
+                    <span>Send on WhatsApp</span>
+                  </button>
+                </form>
               </div>
             </section>
 
             {/* ========================================================
-                5. SHARE MY CARD (WhatsApp, Copy Link, QR Code, Native Share)
+                5. SHARE MY CARD (Level 3 Tactile Share Options)
+                WhatsApp · Copy Link · QR Code · More Options
                 ======================================================== */}
-            <section id="share-card-section" aria-label="Share my card" className="mt-8">
-              <div>
-                <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-brand-teal">
-                  Instant Access
-                </p>
-                <h2 className="mt-0.5 text-lg font-extrabold text-brand-navy">
-                  SHARE MY CARD
-                </h2>
-              </div>
+            <section id="share-card-section" aria-label="Share my card" className="pt-2">
+              <SectionDivider title="Share My Card" />
 
-              <div className="mt-3.5 grid grid-cols-2 gap-2.5">
-                {/* 1. WhatsApp Share */}
+              <div className="mt-3 grid grid-cols-4 gap-2">
+                {/* 1. WhatsApp */}
                 <button
                   type="button"
                   id="share-tile-whatsapp"
                   onClick={shareWhatsApp}
-                  className="group flex flex-col items-center justify-center rounded-2xl border border-slate-200/90 bg-white p-3.5 text-center shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-teal/40 hover:shadow-card-hover active:scale-[0.98]"
+                  className="card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border border-[#C3CFD2]/80 bg-[#FBFCFD] p-2.5 text-center"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#25D366]/15 text-[#25D366] transition-colors duration-200 group-hover:bg-[#25D366] group-hover:text-white">
-                    <WhatsAppIcon className="h-5 w-5" />
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#EEF2F3] text-[#1B4F57] transition-colors group-hover:bg-[#1B4F57] group-hover:text-white shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
+                    <WhatsAppIcon className="h-4 w-4" />
                   </div>
-                  <span className="mt-2 text-xs font-bold text-brand-ink">WhatsApp</span>
-                  <span className="text-[10px] text-brand-muted">Share to chat</span>
+                  <span className="mt-1.5 text-[10px] font-semibold text-[#162B3A]">
+                    WhatsApp
+                  </span>
                 </button>
 
                 {/* 2. Copy Link */}
@@ -776,166 +723,206 @@ export default function App() {
                   id="share-tile-copy"
                   onClick={copyLink}
                   aria-live={copied ? 'polite' : undefined}
-                  className={`group flex flex-col items-center justify-center rounded-2xl border p-3.5 text-center shadow-card transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.98] ${
+                  className={`card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border p-2.5 text-center ${
                     copied
-                      ? 'border-brand-teal bg-brand-tealSoft text-brand-teal'
-                      : 'border-slate-200/90 bg-white hover:border-brand-teal/40 hover:shadow-card-hover'
+                      ? 'border-[#1B4F57] bg-[#EEF2F3] text-[#1B4F57]'
+                      : 'border-[#C3CFD2]/80 bg-[#FBFCFD]'
                   }`}
                 >
                   <div
-                    className={`flex h-10 w-10 items-center justify-center rounded-xl transition-colors duration-200 ${
+                    className={`flex h-8 w-8 items-center justify-center rounded-lg transition-colors ${
                       copied
-                        ? 'bg-brand-teal text-white'
-                        : 'bg-brand-tealSoft text-brand-teal group-hover:bg-brand-teal group-hover:text-white'
+                        ? 'bg-[#1B4F57] text-white'
+                        : 'bg-[#EEF2F3] text-[#1B4F57] group-hover:bg-[#1B4F57] group-hover:text-white shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]'
                     }`}
                   >
                     {copied ? (
-                      <CheckCircle2 className="h-5 w-5" strokeWidth={2.4} />
+                      <CheckCircle2 className="h-4 w-4 stroke-[2.4]" />
                     ) : (
-                      <Copy className="h-5 w-5" strokeWidth={2.1} />
+                      <Copy className="h-4 w-4" strokeWidth={2.2} />
                     )}
                   </div>
-                  <span className="mt-2 text-xs font-bold text-brand-ink">
-                    {copied ? 'Link Copied' : 'Copy Link'}
-                  </span>
-                  <span className="text-[10px] text-brand-muted">
-                    {copied ? 'Copied to clipboard' : 'Copy card URL'}
+                  <span className="mt-1.5 text-[10px] font-semibold text-[#162B3A]">
+                    {copied ? 'Copied' : 'Copy Link'}
                   </span>
                 </button>
 
-                {/* 3. QR Code Modal */}
+                {/* 3. QR Code */}
                 <button
                   type="button"
                   id="share-tile-qr"
                   onClick={() => setQrOpen(true)}
-                  className="group flex flex-col items-center justify-center rounded-2xl border border-slate-200/90 bg-white p-3.5 text-center shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-teal/40 hover:shadow-card-hover active:scale-[0.98]"
+                  className="card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border border-[#C3CFD2]/80 bg-[#FBFCFD] p-2.5 text-center"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-tealSoft text-brand-teal transition-colors duration-200 group-hover:bg-brand-teal group-hover:text-white">
-                    <QrCode className="h-5 w-5" strokeWidth={2.1} />
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#EEF2F3] text-[#1B4F57] transition-colors group-hover:bg-[#1B4F57] group-hover:text-white shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
+                    <QrCode className="h-4 w-4" strokeWidth={2.2} />
                   </div>
-                  <span className="mt-2 text-xs font-bold text-brand-ink">QR Code</span>
-                  <span className="text-[10px] text-brand-muted">Scan to view</span>
+                  <span className="mt-1.5 text-[10px] font-semibold text-[#162B3A]">
+                    QR Code
+                  </span>
                 </button>
 
-                {/* 4. More / Native Share */}
+                {/* 4. More Options */}
                 <button
                   type="button"
                   id="share-tile-more"
-                  onClick={shareCard}
-                  className="group flex flex-col items-center justify-center rounded-2xl border border-slate-200/90 bg-white p-3.5 text-center shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-teal/40 hover:shadow-card-hover active:scale-[0.98]"
+                  onClick={shareNative}
+                  className="card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border border-[#C3CFD2]/80 bg-[#FBFCFD] p-2.5 text-center"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-tealSoft text-brand-teal transition-colors duration-200 group-hover:bg-brand-teal group-hover:text-white">
-                    <Share2 className="h-5 w-5" strokeWidth={2.1} />
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#EEF2F3] text-[#1B4F57] transition-colors group-hover:bg-[#1B4F57] group-hover:text-white shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
+                    <Share2 className="h-4 w-4" strokeWidth={2.2} />
                   </div>
-                  <span className="mt-2 text-xs font-bold text-brand-ink">More</span>
-                  <span className="text-[10px] text-brand-muted">Native Share</span>
+                  <span className="mt-1.5 text-[10px] font-semibold text-[#162B3A]">
+                    More
+                  </span>
                 </button>
               </div>
             </section>
 
             {/* ========================================================
-                6. CONTACT INFORMATION (Premium Compact Panel)
+                6. BUSINESS INFORMATION (Clean Editorial Panel)
+                Phone, Email, Website, ARN, Location
                 ======================================================== */}
-            <section id="contact-details-section" aria-label="Contact information" className="mt-8">
-              <div>
-                <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-brand-teal">
-                  Direct Channel
-                </p>
-                <h2 className="mt-0.5 text-lg font-extrabold text-brand-navy">
-                  Contact Information
-                </h2>
-              </div>
+            <section id="business-info-section" aria-label="Business information" className="pt-2">
+              <SectionDivider title="Business Details" />
 
-              <div className="mt-3.5 overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-card divide-y divide-slate-100">
-                {contactRows.map((row) => {
-                  const Icon = row.icon
-                  const hasLink = Boolean(row.href)
-                  const Wrapper = hasLink ? 'a' : 'div'
-                  const wrapperProps = hasLink
-                    ? {
-                        id: row.id,
-                        href: row.href,
-                        ...(row.external ? { target: '_blank', rel: 'noopener noreferrer' } : {}),
-                        className:
-                          'group flex items-center gap-3 p-3.5 transition-colors hover:bg-slate-50 active:bg-slate-100 focus:outline-none focus-visible:bg-slate-50',
-                      }
-                    : {
-                        id: row.id,
-                        className: 'flex items-center gap-3 p-3.5',
-                      }
+              <div className="card-elevation-panel mt-3 rounded-xl border border-[#C3CFD2] bg-[#FBFCFD] divide-y divide-[#C3CFD2]/60 overflow-hidden">
+                {/* 1. Phone & WhatsApp */}
+                <a
+                  href={`tel:${BRAND.phoneRaw}`}
+                  className="group flex items-center justify-between p-3 transition hover:bg-[#EEF2F3]"
+                >
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="flex h-7 w-7 items-center justify-center rounded-md bg-[#EEF2F3] text-[#1B4F57]">
+                      <Phone className="h-3.5 w-3.5" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="block text-[9px] font-bold uppercase tracking-wider text-[#6C8085]">
+                        PHONE & WHATSAPP
+                      </span>
+                      <span className="block truncate text-xs font-semibold text-[#163744] group-hover:text-[#1B4F57]">
+                        {BRAND.phone}
+                      </span>
+                    </div>
+                  </div>
+                  <ChevronRight className="h-3.5 w-3.5 text-[#6C8085] group-hover:text-[#1B4F57]" />
+                </a>
 
-                  return (
-                    <Wrapper key={row.id} {...wrapperProps}>
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-tealSoft text-brand-teal transition-colors duration-200 group-hover:bg-brand-teal group-hover:text-white">
-                        <Icon className="h-4 w-4" strokeWidth={2.1} />
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <span className="block text-[10px] font-bold uppercase tracking-wider text-brand-muted">
-                          {row.label}
-                        </span>
-                        <span className="block truncate text-xs font-semibold text-brand-ink">
-                          {row.value}
-                        </span>
-                      </div>
-                      {row.actionText && (
-                        <span className="shrink-0 rounded-lg bg-slate-100 px-2 py-1 text-[10px] font-bold text-brand-inkSecondary transition-colors group-hover:bg-brand-tealSoft group-hover:text-brand-teal">
-                          {row.actionText}
-                        </span>
-                      )}
-                      {hasLink && (
-                        <ChevronRight className="h-4 w-4 shrink-0 text-slate-300 transition-colors group-hover:text-brand-teal" />
-                      )}
-                    </Wrapper>
-                  )
-                })}
+                {/* 2. Email */}
+                <a
+                  href={mailtoHref}
+                  className="group flex items-center justify-between p-3 transition hover:bg-[#EEF2F3]"
+                >
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="flex h-7 w-7 items-center justify-center rounded-md bg-[#EEF2F3] text-[#1B4F57]">
+                      <Mail className="h-3.5 w-3.5" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="block text-[9px] font-bold uppercase tracking-wider text-[#6C8085]">
+                        EMAIL
+                      </span>
+                      <span className="block truncate text-xs font-semibold text-[#163744] group-hover:text-[#1B4F57]">
+                        {BRAND.email}
+                      </span>
+                    </div>
+                  </div>
+                  <ChevronRight className="h-3.5 w-3.5 text-[#6C8085] group-hover:text-[#1B4F57]" />
+                </a>
+
+                {/* 3. Website */}
+                <a
+                  href={BRAND.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between p-3 transition hover:bg-[#EEF2F3]"
+                >
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="flex h-7 w-7 items-center justify-center rounded-md bg-[#EEF2F3] text-[#1B4F57]">
+                      <Globe className="h-3.5 w-3.5" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="block text-[9px] font-bold uppercase tracking-wider text-[#6C8085]">
+                        WEBSITE
+                      </span>
+                      <span className="block truncate text-xs font-semibold text-[#163744] group-hover:text-[#1B4F57]">
+                        {BRAND.websiteDisplay}
+                      </span>
+                    </div>
+                  </div>
+                  <ArrowUpRight className="h-3.5 w-3.5 text-[#6C8085] group-hover:text-[#1B4F57]" />
+                </a>
+
+                {/* 4. ARN & AMFI Registration */}
+                <div className="flex items-center gap-3 p-3">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-md bg-[#EEF2F3] text-[#1B4F57]">
+                    <Check className="h-3.5 w-3.5 stroke-[2.5]" />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="block text-[9px] font-bold uppercase tracking-wider text-[#6C8085]">
+                      REGISTRATION & CREDENTIAL
+                    </span>
+                    <span className="block truncate text-xs font-semibold text-[#163744]">
+                      {BRAND.credential} ({BRAND.arn})
+                    </span>
+                  </div>
+                </div>
+
+                {/* 5. Location */}
+                <div className="flex items-center gap-3 p-3">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-md bg-[#EEF2F3] text-[#1B4F57]">
+                    <MapPin className="h-3.5 w-3.5" />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="block text-[9px] font-bold uppercase tracking-wider text-[#6C8085]">
+                      LOCATION
+                    </span>
+                    <span className="block truncate text-xs font-semibold text-[#163744]">
+                      {BRAND.location}
+                    </span>
+                  </div>
+                </div>
               </div>
             </section>
-          </main>
+          </div>
 
           {/* ========================================================
-              7. FOOTER (Sophisticated FinRev Branded Footer)
+              7. FOOTER (Premium FinRev Teal Footer)
+              FINREV SOLUTIONS
+              Secure Today. Stronger Tomorrow.
+              Panchanan Kumar · Mutual Fund Distributor
+              Required disclaimer and copyright
               ======================================================== */}
           <footer
             id="finrev-footer"
-            className="relative z-10 border-t border-slate-800 bg-[#0B0F19] px-6 pt-7 pb-8 text-center text-white"
+            className="bg-[#1B4F57] px-6 py-6 text-center text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]"
           >
-            <div className="mx-auto w-fit rounded-xl bg-white p-2.5 shadow-md">
-              <img
-                src={logoUrl}
-                alt="FinRev Solutions"
-                width="120"
-                height="80"
-                className="h-7 w-auto object-contain"
-              />
-            </div>
-
-            <p className="mt-3 text-xs font-extrabold uppercase tracking-[0.25em] text-brand-tealLight">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-white">
               {BRAND.name}
             </p>
-            <p className="mt-1 text-[11px] text-slate-400 font-medium">
-              {BRAND.credential} · {BRAND.arn}
+            <p className="mt-0.5 text-[11px] italic text-[#EEF2F3]/90">
+              "{BRAND.tagline}"
             </p>
 
-            {/* Regulatory Disclaimer */}
-            <div className="mx-auto mt-4 max-w-xs border-t border-white/10 pt-3">
-              <p className="text-[10px] leading-relaxed text-slate-500">
-                Mutual Fund investments are subject to market risks. Please read all scheme-related
-                documents carefully before investing.
-              </p>
+            <div className="mt-2.5 text-[11px] text-white/90">
+              <span className="font-semibold">{BRAND.person}</span>
+              <span className="mx-1.5 opacity-60">•</span>
+              <span>{BRAND.role}</span>
             </div>
 
-            {/* Copyright */}
-            <div className="mt-3 border-t border-white/5 pt-3">
-              <p className="text-[10px] text-slate-500">
+            <div className="mt-3.5 border-t border-white/15 pt-3 max-w-xs mx-auto">
+              <p className="text-[9px] leading-relaxed text-[#EEF2F3]/80">
+                Mutual Fund investments are subject to market risks. Read all scheme related documents carefully before investing.
+              </p>
+              <p className="mt-2 text-[9px] text-[#EEF2F3]/60">
                 © 2026 {BRAND.name}. All rights reserved.
               </p>
             </div>
           </footer>
-        </div>
+        </main>
       </div>
 
       {/* ========================================================
-          QR CODE MODAL (Ultra-Premium Presentation)
+          QR CODE MODAL (Bespoke 3D Presentation)
           ======================================================== */}
       {qrOpen && (
         <div
@@ -945,33 +932,25 @@ export default function App() {
           aria-label="FinRev Digital Visiting Card QR Code"
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
         >
-          {/* Backdrop */}
           <button
             type="button"
-            aria-label="Close modal backdrop"
+            aria-label="Close QR backdrop"
             onClick={() => setQrOpen(false)}
-            className="animate-fade-in fixed inset-0 h-full w-full bg-black/80 backdrop-blur-md"
+            className="animate-fade-in fixed inset-0 h-full w-full bg-black/75 backdrop-blur-sm"
           />
 
-          {/* Modal Container */}
-          <div className="animate-qr-in relative z-10 w-full max-w-xs overflow-hidden rounded-3xl border border-white/15 bg-[#0F1422] p-6 text-center text-white shadow-modal">
-            {/* Ambient Radial */}
-            <div className="pointer-events-none absolute -top-10 left-1/2 h-40 w-40 -translate-x-1/2 rounded-full bg-brand-teal/30 blur-2xl" />
-
-            {/* Close Button */}
+          <div className="animate-qr-in card-elevation-1 relative z-10 w-full max-w-[320px] overflow-hidden rounded-2xl border border-[#C3CFD2] bg-[#FBFCFD] p-5 text-center text-[#162B3A]">
             <button
-              ref={qrCloseRef}
               type="button"
               id="qr-modal-close"
               onClick={() => setQrOpen(false)}
-              aria-label="Close QR Code"
-              className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-400 transition hover:bg-white/10 hover:text-white"
+              aria-label="Close"
+              className="absolute top-3.5 right-3.5 flex h-7 w-7 items-center justify-center rounded-full bg-[#EEF2F3] text-[#6C8085] hover:text-[#163744] transition"
             >
               <X className="h-4 w-4" />
             </button>
 
-            {/* Header */}
-            <div className="mx-auto w-fit rounded-xl bg-white p-2 shadow-sm">
+            <div className="mx-auto w-fit">
               <img
                 src={logoUrl}
                 alt="FinRev Solutions"
@@ -979,26 +958,24 @@ export default function App() {
               />
             </div>
 
-            <h3 className="mt-3 text-base font-extrabold text-white">
-              Scan My Digital Card
+            <h3 className="mt-3 text-sm font-bold text-[#163744]">
+              Scan to View Digital Card
             </h3>
-            <p className="mt-0.5 text-xs text-slate-400">
-              Point any mobile camera to view instantly
+            <p className="text-[11px] text-[#6C8085]">
+              Point your camera at this QR code
             </p>
 
-            {/* High-Resolution QR Display */}
-            <div className="mx-auto mt-4 w-fit rounded-2xl bg-white p-3.5 shadow-lg ring-1 ring-slate-200">
+            <div className="mx-auto mt-3.5 w-fit rounded-xl border border-[#C3CFD2] bg-white p-3 shadow-sm">
               <img
                 src={BRAND.qrImage}
-                alt="QR Code for FinRev Solutions Digital Card"
-                width="200"
-                height="200"
-                className="h-44 w-44 object-contain"
+                alt="QR Code"
+                width="180"
+                height="180"
+                className="h-40 w-40 object-contain"
               />
             </div>
 
-            {/* Modal Actions */}
-            <div className="mt-5 space-y-2">
+            <div className="mt-4 space-y-2">
               <button
                 type="button"
                 id="modal-copy-link"
@@ -1006,17 +983,16 @@ export default function App() {
                   copyLink()
                   setQrOpen(false)
                 }}
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand-teal py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-cta transition hover:bg-brand-tealGlow active:scale-[0.98]"
+                className="btn-tactile-teal flex w-full items-center justify-center gap-2 rounded-lg bg-[#1B4F57] py-2 text-xs font-bold text-white transition"
               >
-                <Copy className="h-4 w-4" />
+                <Copy className="h-3.5 w-3.5" />
                 <span>Copy Card Link</span>
               </button>
 
               <button
                 type="button"
-                id="modal-dismiss"
                 onClick={() => setQrOpen(false)}
-                className="w-full rounded-xl border border-white/10 bg-white/5 py-2 text-xs font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white"
+                className="w-full rounded-lg border border-[#C3CFD2] bg-[#EEF2F3] py-1.5 text-xs font-medium text-[#163744] hover:bg-[#E2E8EB] transition"
               >
                 Close
               </button>
@@ -1026,59 +1002,52 @@ export default function App() {
       )}
 
       {/* ========================================================
-          PHOTO UPLOAD / MANAGEMENT MODAL
+          PHOTO UPLOAD MODAL
           ======================================================== */}
       {photoModalOpen && (
         <div
           id="photo-modal"
           role="dialog"
           aria-modal="true"
-          aria-label="Profile Photo Settings"
+          aria-label="Profile Photo"
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
         >
           <button
             type="button"
-            aria-label="Close photo modal backdrop"
+            aria-label="Close backdrop"
             onClick={() => setPhotoModalOpen(false)}
-            className="animate-fade-in fixed inset-0 h-full w-full bg-black/80 backdrop-blur-md"
+            className="animate-fade-in fixed inset-0 h-full w-full bg-black/75 backdrop-blur-sm"
           />
 
-          <div className="animate-qr-in relative z-10 w-full max-w-xs overflow-hidden rounded-3xl border border-white/15 bg-[#0F1422] p-6 text-center text-white shadow-modal">
+          <div className="animate-qr-in card-elevation-1 relative z-10 w-full max-w-[320px] overflow-hidden rounded-2xl border border-[#C3CFD2] bg-[#FBFCFD] p-5 text-center text-[#162B3A]">
             <button
               type="button"
               id="photo-modal-close"
               onClick={() => setPhotoModalOpen(false)}
               aria-label="Close"
-              className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-400 transition hover:bg-white/10 hover:text-white"
+              className="absolute top-3.5 right-3.5 flex h-7 w-7 items-center justify-center rounded-full bg-[#EEF2F3] text-[#6C8085] hover:text-[#163744] transition"
             >
               <X className="h-4 w-4" />
             </button>
 
-            <div className="flex justify-center">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-teal/20 text-brand-tealLight">
-                <Camera className="h-6 w-6" />
-              </div>
+            <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-[#EEF2F3] text-[#1B4F57] shadow-sm">
+              <Camera className="h-5 w-5" />
             </div>
 
-            <h3 className="mt-3 text-base font-extrabold text-white">
+            <h3 className="mt-2 text-sm font-bold text-[#163744]">
               Profile Photo
             </h3>
-            <p className="mt-1 text-xs text-slate-400">
-              Upload your official professional portrait for your digital visiting card.
+            <p className="text-[11px] text-[#6C8085]">
+              Upload your executive portrait for your visiting card
             </p>
 
-            {/* Current Preview */}
             <div className="my-4 flex justify-center">
-              <div className="h-20 w-20 overflow-hidden rounded-full p-1 bg-gradient-to-tr from-brand-teal to-brand-tealLight">
-                <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-[#161C2E]">
+              <div className="h-20 w-20 rounded-full p-[2px] bg-[#1B4F57] shadow-md overflow-hidden">
+                <div className="h-full w-full rounded-full bg-[#EEF2F3] overflow-hidden flex items-center justify-center">
                   {customPhoto ? (
-                    <img
-                      src={customPhoto}
-                      alt="Current Portrait"
-                      className="h-full w-full object-cover"
-                    />
+                    <img src={customPhoto} alt="Portrait" className="h-full w-full object-cover" />
                   ) : (
-                    <span className="text-xl font-bold text-brand-tealLight">PK</span>
+                    <span className="text-xl font-bold text-[#1B4F57]">PK</span>
                   )}
                 </div>
               </div>
@@ -1089,10 +1058,10 @@ export default function App() {
                 type="button"
                 id="photo-upload-btn"
                 onClick={() => fileInputRef.current?.click()}
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand-teal py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-cta transition hover:bg-brand-tealGlow active:scale-[0.98]"
+                className="btn-tactile-teal flex w-full items-center justify-center gap-2 rounded-lg bg-[#1B4F57] py-2 text-xs font-bold text-white"
               >
-                <UploadCloud className="h-4 w-4" />
-                <span>Upload New Photo</span>
+                <UploadCloud className="h-3.5 w-3.5" />
+                <span>Upload Photo</span>
               </button>
 
               {customPhoto && (
@@ -1100,9 +1069,9 @@ export default function App() {
                   type="button"
                   id="photo-reset-btn"
                   onClick={removePhoto}
-                  className="flex w-full items-center justify-center gap-2 rounded-xl border border-rose-500/30 bg-rose-500/10 py-2 text-xs font-semibold text-rose-300 transition hover:bg-rose-500/20"
+                  className="flex w-full items-center justify-center gap-2 rounded-lg border border-rose-200 bg-rose-50 py-1.5 text-xs text-rose-700 hover:bg-rose-100 transition"
                 >
-                  <Trash2 className="h-3.5 w-3.5" />
+                  <Trash2 className="h-3 w-3" />
                   <span>Reset to Initials</span>
                 </button>
               )}
@@ -1110,7 +1079,7 @@ export default function App() {
               <button
                 type="button"
                 onClick={() => setPhotoModalOpen(false)}
-                className="w-full rounded-xl border border-white/10 bg-white/5 py-2 text-xs font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white"
+                className="w-full rounded-lg border border-[#C3CFD2] bg-[#EEF2F3] py-1.5 text-xs font-medium text-[#163744] hover:bg-[#E2E8EB] transition"
               >
                 Cancel
               </button>
@@ -1120,36 +1089,16 @@ export default function App() {
       )}
 
       {/* ========================================================
-          FLOATING QUICK-ACTION (Mobile Direct WhatsApp)
-          ======================================================== */}
-      <a
-        id="floating-whatsapp-btn"
-        href={waChatHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Direct WhatsApp Consultation"
-        className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-brand-teal text-white shadow-[0_10px_25px_-5px_rgba(47,105,115,0.7)] transition-all duration-300 hover:scale-105 hover:bg-brand-tealGlow active:scale-95 sm:hidden"
-      >
-        <WhatsAppIcon className="h-7 w-7" />
-        <span className="absolute -top-1 -right-1 flex h-4 w-4">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-          <span className="relative inline-flex h-4 w-4 rounded-full bg-emerald-500" />
-        </span>
-      </a>
-
-      {/* ========================================================
-          TOAST NOTIFICATION (Tactile Feedback)
+          TOAST FEEDBACK
           ======================================================== */}
       {toast && (
         <div
-          id="toast-notification"
           role="status"
-          className="pointer-events-none fixed inset-x-0 bottom-20 z-50 flex justify-center px-4"
+          aria-live="polite"
+          className="animate-toast-in fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 rounded-full bg-[#163744] px-4 py-2 text-xs font-semibold text-white shadow-2xl"
         >
-          <div className="animate-toast-in flex items-center gap-2.5 rounded-full border border-teal-500/30 bg-[#0F1422]/95 px-4 py-2.5 text-xs font-semibold text-white shadow-modal backdrop-blur-md">
-            <CheckCircle2 className="h-4 w-4 text-brand-tealLight" strokeWidth={2.4} />
-            <span>{toast}</span>
-          </div>
+          <Sparkles className="h-3.5 w-3.5 text-[#2B7A80]" />
+          <span>{toast}</span>
         </div>
       )}
     </div>
