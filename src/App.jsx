@@ -21,10 +21,7 @@ import {
   Landmark,
   Newspaper,
   Check,
-  Camera,
   ArrowUpRight,
-  UploadCloud,
-  Trash2,
   Send,
   Sparkles,
 } from 'lucide-react'
@@ -247,28 +244,19 @@ export default function App() {
   const [phone, setPhone] = useState('')
   const [phoneError, setPhoneError] = useState('')
   const [qrOpen, setQrOpen] = useState(false)
-  const [photoModalOpen, setPhotoModalOpen] = useState(false)
   const [selectedService, setSelectedService] = useState(null)
-  const [customPhoto, setCustomPhoto] = useState(null)
   const [toast, setToast] = useState('')
 
   const toastTimer = useRef(null)
-  const fileInputRef = useRef(null)
   const lastFocusedServiceCardRef = useRef(null)
 
   useEffect(() => {
     setMounted(true)
-    try {
-      const saved = localStorage.getItem('finrev_profile_photo')
-      if (saved) setCustomPhoto(saved)
-    } catch {
-      // Storage fallback
-    }
     return () => clearTimeout(toastTimer.current)
   }, [])
 
   useEffect(() => {
-    if (!qrOpen && !photoModalOpen && !selectedService) return
+    if (!qrOpen && !selectedService) return
     const onKey = (event) => {
       if (event.key === 'Escape') {
         if (selectedService) {
@@ -276,7 +264,6 @@ export default function App() {
           setTimeout(() => lastFocusedServiceCardRef.current?.focus(), 50)
         }
         setQrOpen(false)
-        setPhotoModalOpen(false)
       }
     }
     document.addEventListener('keydown', onKey)
@@ -286,7 +273,7 @@ export default function App() {
       document.removeEventListener('keydown', onKey)
       document.body.style.overflow = prevOverflow
     }
-  }, [qrOpen, photoModalOpen, selectedService])
+  }, [qrOpen, selectedService])
 
   const handleOpenService = (service) => {
     lastFocusedServiceCardRef.current = document.getElementById(`service-card-${service.id}`)
@@ -304,41 +291,6 @@ export default function App() {
     setToast(message)
     clearTimeout(toastTimer.current)
     toastTimer.current = setTimeout(() => setToast(''), 2500)
-  }
-
-  const handlePhotoUpload = (e) => {
-    const file = e.target.files?.[0]
-    if (!file) return
-    if (!file.type.startsWith('image/')) {
-      showToast('Please select an image file')
-      return
-    }
-    const reader = new FileReader()
-    reader.onload = (event) => {
-      const dataUrl = event.target?.result
-      if (typeof dataUrl === 'string') {
-        setCustomPhoto(dataUrl)
-        try {
-          localStorage.setItem('finrev_profile_photo', dataUrl)
-        } catch {
-          // Quota handling
-        }
-        showToast('Profile photo updated')
-        setPhotoModalOpen(false)
-      }
-    }
-    reader.readAsDataURL(file)
-  }
-
-  const removePhoto = () => {
-    setCustomPhoto(null)
-    try {
-      localStorage.removeItem('finrev_profile_photo')
-    } catch {
-      // Storage fallback
-    }
-    showToast('Photo reset')
-    setPhotoModalOpen(false)
   }
 
   const downloadContact = () => {
@@ -522,7 +474,7 @@ export default function App() {
 
             {/* Profile Photo OVERLAPPING the boundary (50% in Navy Hero, 50% in White Content - 132px-145px) */}
             <div className="relative -mt-16 sm:-mt-18 flex justify-center z-20">
-              <div className="relative group">
+              <div className="relative">
                 {/* Subtle soft backdrop glow & gold aura */}
                 <div className="absolute inset-0 rounded-full bg-[#F2B705]/25 blur-xl transform scale-110" />
 
@@ -531,7 +483,7 @@ export default function App() {
                   <div className="h-full w-full rounded-full overflow-hidden bg-[#F0F4F8] flex items-center justify-center">
                     <img
                       id="profile-photo-img"
-                      src={customPhoto || pkPhotoUrl}
+                      src={pkPhotoUrl}
                       alt="Panchanan Kumar - Mutual Fund Distributor"
                       className="h-full w-full object-cover object-center"
                       onError={(e) => {
@@ -542,29 +494,8 @@ export default function App() {
                     />
                   </div>
                 </div>
-
-                {/* Tactile Photo upload trigger with Navy + Gold accent */}
-                <button
-                  type="button"
-                  id="profile-photo-trigger"
-                  onClick={() => setPhotoModalOpen(true)}
-                  aria-label="Update profile photo"
-                  title="Upload profile photo"
-                  className="btn-tactile-primary absolute bottom-1 right-1 flex h-9 w-9 items-center justify-center rounded-full bg-[#102A43] text-[#F2B705] border-2 border-[#FFFFFF] shadow-md transition hover:bg-[#163A5F] active:scale-95"
-                >
-                  <Camera className="h-4.5 w-4.5" strokeWidth={2.2} />
-                </button>
               </div>
             </div>
-
-            {/* Hidden file input */}
-            <input
-              ref={fileInputRef}
-              type="file"
-              accept="image/*"
-              className="hidden"
-              onChange={handlePhotoUpload}
-            />
 
             {/* Profile Typography Hierarchy (Prominent & High Contrast) */}
             <div className="mt-4 px-4 sm:px-6">
@@ -1022,7 +953,7 @@ export default function App() {
               ======================================================== */}
           <footer
             id="finrev-footer"
-            className="bg-gradient-to-b from-[#102A43] via-[#0E243A] to-[#0B1F33] px-4 py-5 sm:py-6 text-center text-white relative overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] border-t border-[#1B5B63]/40"
+            className="bg-gradient-to-b from-[#102A43] via-[#0E243A] to-[#0B1F33] px-4 pt-[22px] pb-5 sm:pt-[26px] sm:pb-6 text-center text-white relative overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] border-t border-[#1B5B63]/40"
           >
             {/* Top Gold Accent Line */}
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#F2B705] to-transparent opacity-85" />
@@ -1030,84 +961,36 @@ export default function App() {
             {/* Subtle Ambient Teal Glow */}
             <div className="pointer-events-none absolute -top-12 left-1/2 -translate-x-1/2 h-24 w-60 rounded-full bg-[#1B5B63]/15 blur-2xl" />
 
-            <div className="relative z-10 max-w-md mx-auto space-y-3.5">
-              {/* 1. Brand Header Lockup */}
-              <div className="flex flex-col items-center">
-                <div className="mb-2 flex h-11 w-11 items-center justify-center rounded-xl bg-white p-1.5 shadow-[0_3px_10px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.9)] border border-[#F2B705]/40">
+            <div className="relative z-10 max-w-md mx-auto space-y-4">
+              {/* 1. Brand Header Lockup (Matching Horizontal Top Branding) */}
+              <div className="flex items-center justify-center gap-3 sm:gap-3.5 text-left py-1">
+                {/* Official FinRev Logo on the LEFT (Crisp White Badge with Gold Highlight) */}
+                <div className="flex-shrink-0 rounded-2xl bg-white p-2 sm:p-2.5 shadow-[0_4px_14px_rgba(0,0,0,0.3),0_1px_3px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,1)] border border-white/90 flex items-center justify-center">
                   <img
                     src={logoUrl}
                     alt="FinRev Solutions Logo"
-                    className="h-full w-full object-contain"
+                    width="160"
+                    height="56"
+                    className="h-8 sm:h-9 w-auto max-w-[85px] sm:max-w-[100px] object-contain"
                   />
                 </div>
-                <h3 className="text-[15px] sm:text-[16px] font-black uppercase tracking-[0.22em] text-white">
-                  {BRAND.name}
-                </h3>
-                <p className="mt-0.5 text-[12.5px] sm:text-[13px] font-bold tracking-wide text-[#F2B705]">
-                  {BRAND.tagline}
-                </p>
 
-                {/* Subtle Premium Gold Accent Line with Dot */}
-                <div className="my-2.5 flex items-center justify-center gap-2">
-                  <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-[#1B5B63]" />
-                  <span className="h-1.5 w-1.5 rotate-45 bg-[#F2B705] shadow-[0_0_4px_rgba(242,183,5,0.7)]" />
-                  <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-[#1B5B63]" />
+                {/* Vertical Divider with Gold Node */}
+                <div className="h-10 sm:h-11 w-[2px] bg-gradient-to-b from-transparent via-[#F2B705] to-transparent flex-shrink-0 relative">
+                  <span className="absolute top-1/2 -translate-y-1/2 -left-[3px] h-2 w-2 rounded-full bg-[#F2B705] shadow-[0_0_6px_rgba(242,183,5,0.9)]" />
+                </div>
+
+                {/* Brand Name & Slogan on the RIGHT */}
+                <div className="flex flex-col justify-center min-w-0">
+                  <span className="text-[17px] sm:text-[19px] font-black uppercase tracking-[0.14em] text-white leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+                    {BRAND.name}
+                  </span>
+                  <span className="mt-0.5 text-[12px] sm:text-[13px] font-bold tracking-wide text-[#F2B705] leading-tight">
+                    {BRAND.tagline}
+                  </span>
                 </div>
               </div>
 
-              {/* 2. Direct Contact Chips: 9835592142 • info@finrevsolutions.com • finrevsolutions.com */}
-              <div className="space-y-1.5 text-xs">
-                <div className="flex flex-wrap items-center justify-center gap-2 text-[13px] sm:text-[14px] font-bold text-white/95">
-                  <a
-                    href={`tel:${BRAND.phoneRaw}`}
-                    className="hover:text-[#F2B705] transition-colors"
-                  >
-                    9835592142
-                  </a>
-                  <span className="text-[#F2B705]">•</span>
-                  <a
-                    href={mailtoHref}
-                    className="hover:text-[#F2B705] transition-colors break-all"
-                  >
-                    info@finrevsolutions.com
-                  </a>
-                </div>
-                <div>
-                  <a
-                    href={BRAND.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[13px] sm:text-[13.5px] font-semibold text-[#AFC3CE] hover:text-[#F2B705] transition-colors"
-                  >
-                    finrevsolutions.com
-                  </a>
-                </div>
-              </div>
-
-              {/* 3. Connect: WhatsApp & Facebook */}
-              <div className="flex items-center justify-center gap-2.5 pt-1">
-                <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#AFC3CE]/80 mr-0.5">
-                  CONNECT
-                </span>
-                <a
-                  href={waChatHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Connect on WhatsApp"
-                  className="flex h-8.5 w-8.5 items-center justify-center rounded-full bg-[#0B1F33] text-white border border-[#1B5B63]/60 shadow-[0_2px_6px_rgba(0,0,0,0.3)] transition-all duration-200 hover:border-[#F2B705] hover:-translate-y-0.5 hover:bg-[#102A43] hover:text-[#25D366] active:scale-95"
-                >
-                  <WhatsAppIcon className="h-4 w-4" />
-                </a>
-                <a
-                  href={BRAND.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Connect on Facebook"
-                  className="flex h-8.5 w-8.5 items-center justify-center rounded-full bg-[#0B1F33] text-white border border-[#1B5B63]/60 shadow-[0_2px_6px_rgba(0,0,0,0.3)] transition-all duration-200 hover:border-[#F2B705] hover:-translate-y-0.5 hover:bg-[#102A43] hover:text-[#1877F2] active:scale-95"
-                >
-                  <Facebook className="h-4 w-4" />
-                </a>
-              </div>
 
               {/* 4. Professional Credential Lockup */}
               <div className="pt-3 border-t border-white/[0.12] space-y-1.5">
@@ -1342,101 +1225,6 @@ export default function App() {
                 type="button"
                 onClick={() => setQrOpen(false)}
                 className="w-full rounded-xl border border-[#D9E2EC] bg-[#F5F7F8] py-2 text-[13px] font-semibold text-[#102A43] hover:bg-[#E8EFF5] transition"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* ========================================================
-          PHOTO UPLOAD MODAL
-          ======================================================== */}
-      {photoModalOpen && (
-        <div
-          id="photo-modal"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Profile Photo"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
-        >
-          <button
-            type="button"
-            aria-label="Close backdrop"
-            onClick={() => setPhotoModalOpen(false)}
-            className="animate-fade-in fixed inset-0 h-full w-full bg-black/80 backdrop-blur-sm"
-          />
-
-          <div className="animate-qr-in card-elevation-1 relative z-10 w-full max-w-[340px] overflow-hidden rounded-2xl border border-[#D9E2EC] bg-[#FFFFFF] p-5 sm:p-6 text-center text-[#102A43]">
-            {/* Top gold accent line */}
-            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#D49E00] via-[#F2B705] to-[#D49E00]" />
-
-            <button
-              type="button"
-              id="photo-modal-close"
-              onClick={() => setPhotoModalOpen(false)}
-              aria-label="Close"
-              className="absolute top-3.5 right-3.5 flex h-8 w-8 items-center justify-center rounded-full bg-[#F0F4F8] text-[#526777] hover:text-[#102A43] transition"
-            >
-              <X className="h-4.5 w-4.5" />
-            </button>
-
-            <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-[#F0F4F8] text-[#102A43] shadow-sm">
-              <Camera className="h-5 w-5 text-[#1B5B63]" />
-            </div>
-
-            <h3 className="mt-2.5 text-[16px] sm:text-[17px] font-extrabold text-[#102A43]">
-              Profile Photo
-            </h3>
-            <p className="text-[12px] sm:text-[13px] text-[#526777]">
-              Upload your executive portrait for your digital card
-            </p>
-
-            <div className="my-4 flex justify-center">
-              <div className="h-28 w-28 rounded-full p-[2.5px] bg-gradient-to-tr from-[#102A43] via-[#F2B705] to-[#1B5B63] shadow-md overflow-hidden">
-                <div className="h-full w-full rounded-full bg-[#F0F4F8] overflow-hidden flex items-center justify-center">
-                  <img
-                    src={customPhoto || pkPhotoUrl}
-                    alt="Panchanan Kumar"
-                    className="h-full w-full object-cover object-center"
-                    onError={(e) => {
-                      if (!e.currentTarget.src.includes('PK%20Photo.jpg') && !e.currentTarget.src.includes('PK Photo.jpg')) {
-                        e.currentTarget.src = './PK Photo.jpg'
-                      }
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-2.5">
-              <button
-                type="button"
-                id="photo-upload-btn"
-                onClick={() => fileInputRef.current?.click()}
-                className="btn-tactile-primary flex w-full items-center justify-center gap-2 rounded-xl bg-[#102A43] hover:bg-[#163A5F] py-3 text-[14px] font-bold text-white shadow-sm"
-              >
-                <UploadCloud className="h-4.5 w-4.5 text-[#F2B705]" />
-                <span>Upload Custom Photo</span>
-              </button>
-
-              {customPhoto && (
-                <button
-                  type="button"
-                  id="photo-reset-btn"
-                  onClick={removePhoto}
-                  className="flex w-full items-center justify-center gap-2 rounded-xl border border-rose-200 bg-rose-50 py-2.5 text-[13px] font-semibold text-rose-700 hover:bg-rose-100 transition"
-                >
-                  <Trash2 className="h-4 w-4" />
-                  <span>Reset to Official Photo</span>
-                </button>
-              )}
-
-              <button
-                type="button"
-                onClick={() => setPhotoModalOpen(false)}
-                className="w-full rounded-xl border border-[#D9E2EC] bg-[#F5F7F8] py-2.5 text-[13.5px] font-semibold text-[#102A43] hover:bg-[#E8EFF5] transition"
               >
                 Close
               </button>
