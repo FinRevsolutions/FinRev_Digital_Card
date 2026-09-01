@@ -1133,17 +1133,31 @@ export default function App() {
             </div>
 
             {/* Footer CTA: Direct to WhatsApp with pre-filled message */}
-            <div className="p-4 border-t border-[#D9E2EC] bg-[#FFFFFF] flex-shrink-0">
+            <div className="p-3.5 sm:p-4 border-t border-[#D9E2EC] bg-[#FFFFFF] flex-shrink-0">
               <a
                 id="service-cta-btn"
                 href={`https://wa.me/${BRAND.whatsappNumber}?text=${encodeURIComponent(selectedService.waMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-tactile-primary group flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-[#102A43] via-[#163A5F] to-[#102A43] py-4 px-5 text-[16px] sm:text-[17px] font-black uppercase tracking-wider text-white border border-[#163A5F] shadow-md hover:shadow-lg transition-all"
+                aria-label={`${selectedService.ctaText} via WhatsApp`}
+                className="group flex w-full items-center justify-between gap-3 rounded-xl sm:rounded-2xl bg-[#102A43] hover:bg-[#143452] active:scale-[0.99] py-3 px-3.5 sm:py-3.5 sm:px-4 text-white border border-[#1B5B63]/60 hover:border-[#F2B705] shadow-[0_4px_14px_rgba(16,42,67,0.25)] hover:shadow-[0_6px_20px_rgba(16,42,67,0.35)] transition-all duration-200"
               >
-                <WhatsAppIcon className="h-5.5 w-5.5 text-[#25D366]" />
-                <span>{selectedService.ctaText}</span>
-                <ArrowUpRight className="h-4.5 w-4.5 text-[#F2B705] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                {/* Small circular WhatsApp icon badge */}
+                <div className="flex h-9 w-9 sm:h-10 sm:w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#0B1F33] text-[#25D366] border border-[#1B5B63]/70 shadow-inner group-hover:border-[#25D366]/60 group-hover:scale-105 transition-all duration-200">
+                  <WhatsAppIcon className="h-5 w-5" />
+                </div>
+
+                {/* Prominent CTA Text */}
+                <div className="flex-1 min-w-0 text-center sm:text-left">
+                  <span className="block text-[14.5px] sm:text-[16px] font-black uppercase tracking-[0.06em] text-white group-hover:text-[#F2B705] transition-colors leading-tight truncate">
+                    {selectedService.ctaText}
+                  </span>
+                </div>
+
+                {/* Gold Accent Arrow Indicator */}
+                <div className="flex h-8 w-8 sm:h-8.5 sm:w-8.5 flex-shrink-0 items-center justify-center rounded-lg bg-white/5 border border-white/10 text-[#F2B705] group-hover:border-[#F2B705]/60 group-hover:bg-[#F2B705]/15 group-hover:translate-x-0.5 transition-all duration-200">
+                  <ArrowUpRight className="h-4.5 w-4.5 sm:h-5 sm:w-5 stroke-[2.5]" />
+                </div>
               </a>
             </div>
           </div>
