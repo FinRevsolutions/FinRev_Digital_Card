@@ -30,6 +30,7 @@ import {
 } from 'lucide-react'
 
 import logoUrl from './assets/logo.png'
+import pkPhotoUrl from './assets/pk-photo.jpg'
 
 const BRAND = {
   name: 'FINREV SOLUTIONS',
@@ -226,16 +227,16 @@ function WhatsAppIcon({ className = 'h-4 w-4' }) {
 
 function SectionDivider({ title }) {
   return (
-    <div className="relative my-2 flex items-center justify-center">
-      <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#D9E2EC] to-transparent" />
-      <div className="flex items-center gap-1.5 px-3">
-        <span className="h-1.5 w-1.5 rotate-45 bg-[#F2B705] shadow-[0_0_4px_rgba(242,183,5,0.4)]" />
-        <h2 className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#102A43]">
+    <div className="relative my-3.5 flex items-center justify-center">
+      <div className="h-[1.5px] flex-1 bg-gradient-to-r from-transparent via-[#D9E2EC] to-transparent" />
+      <div className="flex items-center gap-2 px-3.5">
+        <span className="h-2 w-2 rotate-45 bg-[#F2B705] shadow-[0_0_5px_rgba(242,183,5,0.6)]" />
+        <h2 className="text-[17px] sm:text-[18.5px] font-black uppercase tracking-[0.16em] text-[#102A43]">
           {title}
         </h2>
-        <span className="h-1.5 w-1.5 rotate-45 bg-[#F2B705] shadow-[0_0_4px_rgba(242,183,5,0.4)]" />
+        <span className="h-2 w-2 rotate-45 bg-[#F2B705] shadow-[0_0_5px_rgba(242,183,5,0.6)]" />
       </div>
-      <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#D9E2EC] to-transparent" />
+      <div className="h-[1.5px] flex-1 bg-gradient-to-r from-transparent via-[#D9E2EC] to-transparent" />
     </div>
   )
 }
@@ -478,73 +479,67 @@ export default function App() {
               - AMFI Registered • ARN-195797 (Gold accent pill)
               - Dhanbad, Jharkhand, India
               ======================================================== */}
-          <header className="text-center bg-[#FFFFFF] pb-3">
+          <header className="text-center bg-[#FFFFFF] pb-4">
             {/* Top Gold Brand Accent Line */}
-            <div className="h-1.5 w-full bg-gradient-to-r from-[#D49E00] via-[#F2B705] to-[#D49E00] shadow-[0_1px_4px_rgba(242,183,5,0.4)]" />
+            <div className="h-2 w-full bg-gradient-to-r from-[#D49E00] via-[#F2B705] to-[#D49E00] shadow-[0_1px_6px_rgba(242,183,5,0.45)]" />
 
-            {/* Full-width Deep Navy Hero Section */}
-            <div className="w-full bg-gradient-to-b from-[#102A43] via-[#122E4A] to-[#163A5F] pt-6 sm:pt-7 pb-14 px-6 text-white relative shadow-[0_6px_20px_rgba(16,42,67,0.25),inset_0_1px_0_rgba(255,255,255,0.12)] overflow-hidden">
+            {/* Full-width Deep Navy Hero Section (More spacious & prominent) */}
+            <div className="w-full bg-gradient-to-b from-[#102A43] via-[#122E4A] to-[#163A5F] pt-8 sm:pt-9 pb-20 sm:pb-22 px-4 sm:px-6 text-white relative shadow-[0_8px_24px_rgba(16,42,67,0.3),inset_0_1px_0_rgba(255,255,255,0.15)] overflow-hidden">
               {/* Subtle Geometric Background Watermark & Gold Lines */}
-              <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full border border-white/5 pointer-events-none" />
-              <div className="absolute -bottom-10 -left-10 w-36 h-36 rounded-full border border-[#F2B705]/10 pointer-events-none" />
-              <div className="absolute top-0 right-1/4 w-32 h-[1px] bg-gradient-to-r from-transparent via-[#F2B705]/30 to-transparent pointer-events-none" />
+              <div className="absolute -top-16 -right-16 w-56 h-56 rounded-full border border-white/5 pointer-events-none" />
+              <div className="absolute -bottom-12 -left-12 w-48 h-48 rounded-full border border-[#F2B705]/10 pointer-events-none" />
+              <div className="absolute top-0 right-1/4 w-44 h-[2px] bg-gradient-to-r from-transparent via-[#F2B705]/40 to-transparent pointer-events-none" />
 
-              {/* Corporate Brand Lockup (Logo on Left + White Typography on Right) */}
-              <div className="flex items-center justify-center gap-3 sm:gap-3.5 text-left relative z-10">
+              {/* Corporate Brand Lockup (Prominent Logo on Left + Bold Brand Name on Right) */}
+              <div className="flex items-center justify-center gap-3.5 sm:gap-4.5 text-left relative z-10">
                 {/* Official FinRev Logo on the LEFT (Crisp White Badge with Gold Highlight) */}
-                <div className="flex-shrink-0 rounded-xl bg-white p-1.5 shadow-[0_4px_12px_rgba(0,0,0,0.25),0_1px_2px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,1)] border border-white/80 flex items-center justify-center">
+                <div className="flex-shrink-0 rounded-2xl bg-white p-2.5 sm:p-3 shadow-[0_6px_16px_rgba(0,0,0,0.3),0_1px_3px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,1)] border border-white/90 flex items-center justify-center">
                   <img
                     src={logoUrl}
                     alt="FinRev Solutions Logo"
-                    width="140"
-                    height="48"
-                    className="h-7 sm:h-8 w-auto max-w-[72px] object-contain"
+                    width="160"
+                    height="56"
+                    className="h-10 sm:h-12 w-auto max-w-[110px] object-contain"
                   />
                 </div>
 
                 {/* Vertical Divider with Gold Node */}
-                <div className="h-9 w-[1px] bg-gradient-to-b from-transparent via-[#F2B705]/50 to-transparent flex-shrink-0 relative">
-                  <span className="absolute top-1/2 -translate-y-1/2 -left-[2px] h-1.5 w-1.5 rounded-full bg-[#F2B705]" />
+                <div className="h-12 w-[2px] bg-gradient-to-b from-transparent via-[#F2B705] to-transparent flex-shrink-0 relative">
+                  <span className="absolute top-1/2 -translate-y-1/2 -left-[3px] h-2 w-2 rounded-full bg-[#F2B705] shadow-[0_0_6px_rgba(242,183,5,0.9)]" />
                 </div>
 
                 {/* Brand Name & Slogan on the RIGHT */}
                 <div className="flex flex-col justify-center min-w-0">
-                  <span className="text-[15px] sm:text-[16px] font-extrabold uppercase tracking-[0.14em] text-white leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.4)]">
+                  <span className="text-[19px] sm:text-[22px] font-black uppercase tracking-[0.14em] text-white leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
                     FINREV SOLUTIONS
                   </span>
-                  <span className="mt-0.5 text-[10px] sm:text-[10.5px] font-medium tracking-[0.03em] text-[#F5F7F8]/90 leading-tight">
+                  <span className="mt-1 text-[13px] sm:text-[14.5px] font-bold tracking-wide text-[#F2B705] leading-tight">
                     Secure Today. Stronger Tomorrow.
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Profile Photo OVERLAPPING the boundary (50% in Navy Hero, 50% in White Content) */}
-            <div className="relative -mt-12 flex justify-center z-20">
+            {/* Profile Photo OVERLAPPING the boundary (50% in Navy Hero, 50% in White Content - 132px-145px) */}
+            <div className="relative -mt-16 sm:-mt-18 flex justify-center z-20">
               <div className="relative group">
                 {/* Subtle soft backdrop glow & gold aura */}
-                <div className="absolute inset-0 rounded-full bg-[#F2B705]/15 blur-lg transform scale-110" />
+                <div className="absolute inset-0 rounded-full bg-[#F2B705]/25 blur-xl transform scale-110" />
 
-                {/* 102px Circular Portrait with Triple Ring: White frame + Gold accent + Deep Navy background */}
-                <div className="relative h-[102px] w-[102px] rounded-full border-[4px] border-[#FFFFFF] p-[2px] bg-gradient-to-tr from-[#102A43] via-[#F2B705] to-[#1B5B63] shadow-[0_12px_28px_-6px_rgba(16,42,67,0.45),0_4px_12px_rgba(0,0,0,0.15)]">
+                {/* 132px-145px Circular Portrait with Triple Ring: White frame + Gold/Teal accent + Deep Navy */}
+                <div className="relative h-[132px] w-[132px] sm:h-[145px] sm:w-[145px] rounded-full border-[4.5px] border-[#FFFFFF] p-[3px] bg-gradient-to-tr from-[#102A43] via-[#F2B705] to-[#1B5B63] shadow-[0_16px_36px_-6px_rgba(16,42,67,0.5),0_6px_18px_rgba(0,0,0,0.2)]">
                   <div className="h-full w-full rounded-full overflow-hidden bg-[#F0F4F8] flex items-center justify-center">
-                    {customPhoto ? (
-                      <img
-                        src={customPhoto}
-                        alt="Panchanan Kumar"
-                        className="h-full w-full object-cover object-center"
-                      />
-                    ) : (
-                      /* Executive Monogram Profile fallback */
-                      <div className="flex h-full w-full flex-col items-center justify-center bg-gradient-to-b from-[#F0F4F8] to-[#D9E2EC]">
-                        <span className="text-2xl font-black tracking-wider text-[#102A43]">
-                          PK
-                        </span>
-                        <span className="text-[8px] font-extrabold uppercase tracking-widest text-[#1B5B63]">
-                          FINREV
-                        </span>
-                      </div>
-                    )}
+                    <img
+                      src={customPhoto || pkPhotoUrl}
+                      alt="Panchanan Kumar - Mutual Fund Distributor"
+                      className="h-full w-full object-cover object-center"
+                      onError={(e) => {
+                        // Safe fallback to public root path
+                        if (!e.currentTarget.src.includes('pk-photo.jpg')) {
+                          e.currentTarget.src = './pk-photo.jpg'
+                        }
+                      }}
+                    />
                   </div>
                 </div>
 
@@ -555,9 +550,9 @@ export default function App() {
                   onClick={() => setPhotoModalOpen(true)}
                   aria-label="Update profile photo"
                   title="Upload profile photo"
-                  className="btn-tactile-primary absolute bottom-0 right-0 flex h-7 w-7 items-center justify-center rounded-full bg-[#102A43] text-[#F2B705] border-2 border-[#FFFFFF] shadow-md transition hover:bg-[#163A5F]"
+                  className="btn-tactile-primary absolute bottom-1 right-1 flex h-9 w-9 items-center justify-center rounded-full bg-[#102A43] text-[#F2B705] border-2 border-[#FFFFFF] shadow-md transition hover:bg-[#163A5F] active:scale-95"
                 >
-                  <Camera className="h-3.5 w-3.5" strokeWidth={2.2} />
+                  <Camera className="h-4.5 w-4.5" strokeWidth={2.2} />
                 </button>
               </div>
             </div>
@@ -571,28 +566,28 @@ export default function App() {
               onChange={handlePhotoUpload}
             />
 
-            {/* Profile Typography Hierarchy */}
-            <div className="mt-3 px-6">
-              <h1 className="text-[23px] sm:text-[25px] font-extrabold tracking-tight text-[#102A43]">
+            {/* Profile Typography Hierarchy (Prominent & High Contrast) */}
+            <div className="mt-4 px-4 sm:px-6">
+              <h1 className="text-[30px] sm:text-[34px] font-black tracking-tight text-[#102A43] leading-tight">
                 {BRAND.person}
               </h1>
-              <p className="mt-0.5 text-xs font-bold tracking-wide text-[#1B5B63]">
+              <p className="mt-1 text-[17px] sm:text-[19px] font-extrabold tracking-wide text-[#1B5B63]">
                 {BRAND.role}
               </p>
 
               {/* AMFI Registered Mutual Fund Distributor with Gold Accent Pill */}
-              <div className="mt-2.5 inline-flex items-center gap-1.5 rounded-full border border-[#D9E2EC] bg-[#F5F7F8] px-3.5 py-1 text-[11px] font-medium text-[#102A43] shadow-[inset_0_1px_0_rgba(255,255,255,1),0_1px_2px_rgba(16,42,67,0.04)]">
-                <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-[#F2B705]/20 text-[#D49E00]">
-                  <Check className="h-2.5 w-2.5 stroke-[3]" />
+              <div className="mt-3.5 inline-flex items-center gap-2 rounded-full border border-[#D9E2EC] bg-[#F5F7F8] px-4 py-2 text-[14px] sm:text-[15px] font-bold text-[#102A43] shadow-[inset_0_1px_0_rgba(255,255,255,1),0_1px_3px_rgba(16,42,67,0.05)] flex-wrap justify-center">
+                <span className="flex h-4.5 w-4.5 items-center justify-center rounded-full bg-[#F2B705]/30 text-[#B78103]">
+                  <Check className="h-3.5 w-3.5 stroke-[3]" />
                 </span>
-                <span className="font-semibold">{BRAND.credential}</span>
+                <span>{BRAND.credential}</span>
                 <span className="text-[#829AB1]">•</span>
-                <span className="font-mono font-bold text-[#1B5B63]">{BRAND.arn}</span>
+                <span className="font-mono font-black text-[#1B5B63]">{BRAND.arn}</span>
               </div>
 
               {/* Location */}
-              <div className="mt-2 flex items-center justify-center gap-1 text-[11px] text-[#526777]">
-                <MapPin className="h-3.5 w-3.5 text-[#1B5B63]" />
+              <div className="mt-2.5 flex items-center justify-center gap-1.5 text-[14.5px] sm:text-[15.5px] font-semibold text-[#526777]">
+                <MapPin className="h-4.5 w-4.5 text-[#1B5B63]" />
                 <span>{BRAND.location}</span>
               </div>
             </div>
@@ -601,48 +596,48 @@ export default function App() {
           {/* ========================================================
               CARD CONTENT BODY
               ======================================================== */}
-          <div className="px-5 pb-6 space-y-4">
+          <div className="px-4 sm:px-6 pb-6 space-y-4">
             {/* ========================================================
                 2. ACTION BUTTONS
                 Primary CTA: SAVE CONTACT (Deep Navy + Gold Accent)
                 Contact Actions: Call, WhatsApp, Email (Tactile White Cards)
                 Secondary: Visit Website, Facebook Page
                 ======================================================== */}
-            <section id="action-system" aria-label="Contact actions" className="space-y-2">
+            <section id="action-system" aria-label="Contact actions" className="space-y-2.5">
               {/* SAVE CONTACT (Primary Tactile CTA in Deep Navy #102A43 + Gold #F2B705 Accent) */}
               <button
                 type="button"
                 id="save-contact-cta"
                 onClick={downloadContact}
-                className="btn-tactile-primary group relative flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-[#102A43] via-[#163A5F] to-[#102A43] py-3.5 px-4 text-white border border-[#163A5F] focus:outline-none overflow-hidden"
+                className="btn-tactile-primary group relative flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#102A43] via-[#163A5F] to-[#102A43] py-4 px-5 text-white border border-[#163A5F] focus:outline-none overflow-hidden shadow-md"
               >
                 {/* Subtle gold shimmer line */}
-                <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#F2B705] to-transparent opacity-80" />
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#F2B705] to-transparent opacity-90" />
 
-                <Download className="h-4 w-4 text-[#F2B705]" strokeWidth={2.4} />
-                <span className="text-xs font-extrabold uppercase tracking-wider text-white">
+                <Download className="h-5.5 w-5.5 text-[#F2B705]" strokeWidth={2.4} />
+                <span className="text-[17px] sm:text-[18px] font-black uppercase tracking-wider text-white">
                   SAVE CONTACT
                 </span>
-                <span className="rounded bg-[#F2B705]/20 border border-[#F2B705]/40 px-1.5 py-0.5 text-[9px] font-bold text-[#F2B705]">
+                <span className="rounded bg-[#F2B705]/20 border border-[#F2B705]/40 px-2.5 py-0.5 text-[11.5px] font-extrabold text-[#F2B705]">
                   vCard
                 </span>
               </button>
 
               {/* Contact Actions Row: Call, WhatsApp, Email */}
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid grid-cols-3 gap-2.5">
                 {/* Call */}
                 <a
                   id="action-call"
                   href={`tel:${BRAND.phoneRaw}`}
-                  className="card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border border-[#D9E2EC] bg-[#FFFFFF] py-2.5 px-2 text-center"
+                  className="card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border border-[#D9E2EC] bg-[#FFFFFF] py-3.5 px-2 text-center"
                 >
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#F0F4F8] text-[#1B5B63] transition-colors group-hover:bg-[#102A43] group-hover:text-[#F2B705] shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
-                    <Phone className="h-4 w-4" strokeWidth={2.2} />
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F0F4F8] text-[#1B5B63] transition-colors group-hover:bg-[#102A43] group-hover:text-[#F2B705] shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
+                    <Phone className="h-5.5 w-5.5" strokeWidth={2.2} />
                   </div>
-                  <span className="mt-1.5 text-[11px] font-bold text-[#102A43]">
+                  <span className="mt-2 text-[15.5px] sm:text-[16.5px] font-bold text-[#102A43]">
                     Call
                   </span>
-                  <span className="text-[9px] text-[#526777] truncate max-w-full">
+                  <span className="text-[12.5px] sm:text-[13px] text-[#526777] font-medium truncate max-w-full">
                     Direct
                   </span>
                 </a>
@@ -653,15 +648,15 @@ export default function App() {
                   href={waChatHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border border-[#D9E2EC] bg-[#FFFFFF] py-2.5 px-2 text-center"
+                  className="card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border border-[#D9E2EC] bg-[#FFFFFF] py-3.5 px-2 text-center"
                 >
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#F0F4F8] text-[#1B5B63] transition-colors group-hover:bg-[#102A43] group-hover:text-[#F2B705] shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
-                    <WhatsAppIcon className="h-4 w-4" />
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F0F4F8] text-[#1B5B63] transition-colors group-hover:bg-[#102A43] group-hover:text-[#F2B705] shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
+                    <WhatsAppIcon className="h-5.5 w-5.5" />
                   </div>
-                  <span className="mt-1.5 text-[11px] font-bold text-[#102A43]">
+                  <span className="mt-2 text-[15.5px] sm:text-[16.5px] font-bold text-[#102A43]">
                     WhatsApp
                   </span>
-                  <span className="text-[9px] text-[#526777] truncate max-w-full">
+                  <span className="text-[12.5px] sm:text-[13px] text-[#526777] font-medium truncate max-w-full">
                     Chat
                   </span>
                 </a>
@@ -670,34 +665,34 @@ export default function App() {
                 <a
                   id="action-email"
                   href={mailtoHref}
-                  className="card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border border-[#D9E2EC] bg-[#FFFFFF] py-2.5 px-2 text-center"
+                  className="card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border border-[#D9E2EC] bg-[#FFFFFF] py-3.5 px-2 text-center"
                 >
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#F0F4F8] text-[#1B5B63] transition-colors group-hover:bg-[#102A43] group-hover:text-[#F2B705] shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
-                    <Mail className="h-4 w-4" strokeWidth={2.2} />
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F0F4F8] text-[#1B5B63] transition-colors group-hover:bg-[#102A43] group-hover:text-[#F2B705] shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
+                    <Mail className="h-5.5 w-5.5" strokeWidth={2.2} />
                   </div>
-                  <span className="mt-1.5 text-[11px] font-bold text-[#102A43]">
+                  <span className="mt-2 text-[15.5px] sm:text-[16.5px] font-bold text-[#102A43]">
                     Email
                   </span>
-                  <span className="text-[9px] text-[#526777] truncate max-w-full">
+                  <span className="text-[12.5px] sm:text-[13px] text-[#526777] font-medium truncate max-w-full">
                     Inquiry
                   </span>
                 </a>
               </div>
 
               {/* Secondary: Website & Facebook */}
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-2 gap-2.5">
                 <a
                   id="action-website"
                   href={BRAND.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-tactile-secondary group flex items-center justify-center gap-2 rounded-xl border border-[#D9E2EC] bg-[#FFFFFF] py-2 px-3 text-center"
+                  className="btn-tactile-secondary group flex items-center justify-center gap-2 rounded-xl border border-[#D9E2EC] bg-[#FFFFFF] py-3 px-3.5 text-center"
                 >
-                  <Globe className="h-3.5 w-3.5 text-[#1B5B63] group-hover:text-[#102A43]" />
-                  <span className="text-[11px] font-semibold text-[#102A43]">
+                  <Globe className="h-4.5 w-4.5 text-[#1B5B63] group-hover:text-[#102A43]" />
+                  <span className="text-[14px] sm:text-[15px] font-bold text-[#102A43]">
                     Visit Website
                   </span>
-                  <ArrowUpRight className="h-3 w-3 text-[#829AB1] group-hover:text-[#F2B705]" />
+                  <ArrowUpRight className="h-4 w-4 text-[#829AB1] group-hover:text-[#F2B705]" />
                 </a>
 
                 <a
@@ -705,13 +700,13 @@ export default function App() {
                   href={BRAND.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-tactile-secondary group flex items-center justify-center gap-2 rounded-xl border border-[#D9E2EC] bg-[#FFFFFF] py-2 px-3 text-center"
+                  className="btn-tactile-secondary group flex items-center justify-center gap-2 rounded-xl border border-[#D9E2EC] bg-[#FFFFFF] py-3 px-3.5 text-center"
                 >
-                  <Facebook className="h-3.5 w-3.5 text-[#1B5B63] group-hover:text-[#102A43]" />
-                  <span className="text-[11px] font-semibold text-[#102A43]">
+                  <Facebook className="h-4.5 w-4.5 text-[#1B5B63] group-hover:text-[#102A43]" />
+                  <span className="text-[14px] sm:text-[15px] font-bold text-[#102A43]">
                     Facebook Page
                   </span>
-                  <ArrowUpRight className="h-3 w-3 text-[#829AB1] group-hover:text-[#F2B705]" />
+                  <ArrowUpRight className="h-4 w-4 text-[#829AB1] group-hover:text-[#F2B705]" />
                 </a>
               </div>
             </section>
@@ -723,7 +718,7 @@ export default function App() {
             <section id="services-section" aria-label="Our services" className="pt-2">
               <SectionDivider title="Our Services" />
 
-              <div className="mt-3 grid grid-cols-2 gap-2">
+              <div className="mt-3 grid grid-cols-2 gap-2.5">
                 {SERVICES.map((service, idx) => {
                   const Icon = service.icon
                   return (
@@ -733,24 +728,24 @@ export default function App() {
                       type="button"
                       onClick={() => handleOpenService(service)}
                       aria-label={`Explore ${service.title} details and offerings`}
-                      className="card-elevation-interactive group flex flex-col justify-between rounded-xl border border-[#D9E2EC] bg-[#FFFFFF] p-3 relative overflow-hidden text-left cursor-pointer transition-all duration-200 hover:border-[#1B5B63]/40 focus:outline-none focus:ring-2 focus:ring-[#102A43]/20"
+                      className="card-elevation-interactive group flex flex-col justify-between rounded-xl border border-[#D9E2EC] bg-[#FFFFFF] p-3.5 sm:p-4 relative overflow-hidden text-left cursor-pointer transition-all duration-200 hover:border-[#1B5B63]/40 focus:outline-none focus:ring-2 focus:ring-[#102A43]/20 min-h-[124px]"
                     >
                       {/* Subtle hover gold accent indicator */}
-                      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#F2B705] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#F2B705] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
                       <div className="w-full">
                         <div className="flex items-center justify-between">
-                          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#F0F4F8] text-[#1B5B63] transition-colors group-hover:bg-[#102A43] group-hover:text-[#F2B705] shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
-                            <Icon className="h-4 w-4" strokeWidth={2.2} />
+                          <div className="flex h-9.5 w-9.5 items-center justify-center rounded-lg bg-[#F0F4F8] text-[#1B5B63] transition-colors group-hover:bg-[#102A43] group-hover:text-[#F2B705] shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
+                            <Icon className="h-5 w-5" strokeWidth={2.2} />
                           </div>
                           <div className="flex items-center text-[#829AB1] group-hover:text-[#1B5B63] transition-colors">
-                            <ChevronRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+                            <ChevronRight className="h-4.5 w-4.5 transition-transform duration-200 group-hover:translate-x-0.5" />
                           </div>
                         </div>
-                        <h3 className="mt-2.5 text-xs font-bold leading-tight text-[#102A43] group-hover:text-[#1B5B63] transition-colors">
+                        <h3 className="mt-3 text-[16px] sm:text-[17px] font-bold leading-snug text-[#102A43] group-hover:text-[#1B5B63] transition-colors">
                           {service.cardTitle || service.title}
                         </h3>
-                        <p className="mt-1 text-[10px] leading-relaxed text-[#526777] line-clamp-2">
+                        <p className="mt-1.5 text-[13.5px] sm:text-[14px] leading-relaxed text-[#526777] line-clamp-2">
                           {service.shortDesc || service.description}
                         </p>
                       </div>
@@ -761,35 +756,24 @@ export default function App() {
             </section>
 
             {/* ========================================================
-                4. SEND MY CARD (Panel with +91 Mobile Input)
+                4. SEND MY CARD (Compact, Premium WhatsApp Dispatch)
                 ======================================================== */}
             <section id="send-card-section" aria-label="Send my card" className="pt-2">
               <SectionDivider title="Send My Card" />
 
-              <div className="card-elevation-panel mt-3 rounded-2xl border border-[#D9E2EC] bg-[#F5F7F8] p-4 relative overflow-hidden">
-                {/* Accent corner line */}
-                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#F2B705]/15 to-transparent pointer-events-none rounded-tr-2xl" />
-
-                <div className="flex items-center gap-2.5">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#102A43] text-[#F2B705] shadow-sm">
-                    <Send className="h-3.5 w-3.5" />
+              <div className="card-elevation-panel mt-3 rounded-2xl border border-[#D9E2EC] bg-[#F5F7F8] p-4 sm:p-4.5 relative overflow-hidden">
+                <form onSubmit={sendOnWhatsApp} className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <label htmlFor="recipient-mobile" className="block text-[13.5px] sm:text-[14.5px] font-bold text-[#102A43]">
+                      Forward Card via WhatsApp
+                    </label>
+                    <span className="text-[11.5px] sm:text-[12px] font-semibold text-[#526777]">
+                      Direct Dispatch
+                    </span>
                   </div>
-                  <div>
-                    <h3 className="text-xs font-extrabold uppercase tracking-wider text-[#102A43]">
-                      Instant WhatsApp Dispatch
-                    </h3>
-                    <p className="text-[10px] text-[#526777]">
-                      Forward this digital card directly to any mobile number
-                    </p>
-                  </div>
-                </div>
 
-                <form onSubmit={sendOnWhatsApp} className="mt-3">
-                  <label htmlFor="recipient-mobile" className="sr-only">
-                    Mobile number
-                  </label>
-                  <div className="input-tactile flex items-stretch overflow-hidden rounded-xl border border-[#D9E2EC] bg-[#FFFFFF] transition focus-within:border-[#102A43] focus-within:ring-1 focus-within:ring-[#102A43]">
-                    <span className="flex select-none items-center border-r border-[#D9E2EC] bg-[#F0F4F8] px-3 text-xs font-bold text-[#102A43]">
+                  <div className="input-tactile flex items-stretch overflow-hidden rounded-xl border border-[#D9E2EC] bg-[#FFFFFF] transition focus-within:border-[#102A43] focus-within:ring-2 focus-within:ring-[#102A43]/20 shadow-xs">
+                    <span className="flex select-none items-center border-r border-[#D9E2EC] bg-[#F0F4F8] px-3.5 text-[15px] font-bold text-[#102A43]">
                       +91
                     </span>
                     <input
@@ -797,26 +781,26 @@ export default function App() {
                       type="tel"
                       inputMode="numeric"
                       autoComplete="tel-national"
-                      placeholder="Enter mobile number"
+                      placeholder="Enter 10-digit mobile number"
                       value={phone}
                       onChange={handlePhoneChange}
                       maxLength={10}
-                      className="w-full bg-transparent px-3 py-2.5 text-xs font-medium text-[#102A43] outline-none placeholder:text-[#829AB1]"
+                      className="w-full bg-transparent px-3.5 py-3 text-[15px] sm:text-[16px] font-medium text-[#102A43] outline-none placeholder:text-[#829AB1]"
                     />
                     {phone && (
                       <button
                         type="button"
                         onClick={() => setPhone('')}
-                        className="px-2.5 text-[#829AB1] hover:text-[#102A43]"
+                        className="px-3 text-[#829AB1] hover:text-[#102A43]"
                         aria-label="Clear number"
                       >
-                        <X className="h-3.5 w-3.5" />
+                        <X className="h-4 w-4" />
                       </button>
                     )}
                   </div>
 
                   {phoneError && (
-                    <p role="alert" className="mt-1.5 text-[11px] font-medium text-rose-600">
+                    <p role="alert" className="text-[12.5px] font-semibold text-rose-600">
                       {phoneError}
                     </p>
                   )}
@@ -824,34 +808,35 @@ export default function App() {
                   <button
                     type="submit"
                     id="send-whatsapp-submit"
-                    className="btn-tactile-primary mt-2.5 flex w-full items-center justify-center gap-2 rounded-xl bg-[#102A43] hover:bg-[#163A5F] py-2.5 px-3 text-xs font-bold uppercase tracking-wider text-white border border-[#163A5F]"
+                    className="btn-tactile-primary flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-[#102A43] via-[#163A5F] to-[#102A43] hover:from-[#163A5F] hover:to-[#102A43] py-3.5 px-4 text-[15.5px] sm:text-[16.5px] font-black uppercase tracking-wider text-white border border-[#163A5F] shadow-sm active:scale-[0.99] transition-all"
                   >
-                    <WhatsAppIcon className="h-3.5 w-3.5 text-[#25D366]" />
-                    <span>Send on WhatsApp</span>
+                    <WhatsAppIcon className="h-5 w-5 text-[#25D366]" />
+                    <span>SEND CARD ON WHATSAPP</span>
+                    <ArrowUpRight className="h-4.5 w-4.5 text-[#F2B705]" />
                   </button>
                 </form>
               </div>
             </section>
 
             {/* ========================================================
-                5. SHARE MY CARD (Level 3 Tactile Share Options)
+                5. SHARE MY CARD (Tactile Quick Share Options)
                 WhatsApp · Copy Link · QR Code · More Options
                 ======================================================== */}
             <section id="share-card-section" aria-label="Share my card" className="pt-2">
               <SectionDivider title="Share My Card" />
 
-              <div className="mt-3 grid grid-cols-4 gap-2">
+              <div className="mt-3 grid grid-cols-4 gap-2.5">
                 {/* 1. WhatsApp */}
                 <button
                   type="button"
                   id="share-tile-whatsapp"
                   onClick={shareWhatsApp}
-                  className="card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border border-[#D9E2EC] bg-[#FFFFFF] p-2.5 text-center"
+                  className="card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border border-[#D9E2EC] bg-[#FFFFFF] p-3 text-center"
                 >
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#F0F4F8] text-[#1B5B63] transition-colors group-hover:bg-[#102A43] group-hover:text-[#F2B705] shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
-                    <WhatsAppIcon className="h-4 w-4" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#F0F4F8] text-[#1B5B63] transition-colors group-hover:bg-[#102A43] group-hover:text-[#F2B705] shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
+                    <WhatsAppIcon className="h-5 w-5" />
                   </div>
-                  <span className="mt-1.5 text-[10px] font-semibold text-[#102A43]">
+                  <span className="mt-2 text-[12.5px] sm:text-[13px] font-bold text-[#102A43]">
                     WhatsApp
                   </span>
                 </button>
@@ -862,26 +847,26 @@ export default function App() {
                   id="share-tile-copy"
                   onClick={copyLink}
                   aria-live={copied ? 'polite' : undefined}
-                  className={`card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border p-2.5 text-center ${
+                  className={`card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border p-3 text-center ${
                     copied
                       ? 'border-[#1B5B63] bg-[#F0F4F8] text-[#1B5B63]'
                       : 'border-[#D9E2EC] bg-[#FFFFFF]'
                   }`}
                 >
                   <div
-                    className={`flex h-8 w-8 items-center justify-center rounded-lg transition-colors ${
+                    className={`flex h-10 w-10 items-center justify-center rounded-xl transition-colors ${
                       copied
                         ? 'bg-[#1B5B63] text-white'
                         : 'bg-[#F0F4F8] text-[#1B5B63] group-hover:bg-[#102A43] group-hover:text-[#F2B705] shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]'
                     }`}
                   >
                     {copied ? (
-                      <CheckCircle2 className="h-4 w-4 stroke-[2.4]" />
+                      <CheckCircle2 className="h-5 w-5 stroke-[2.4]" />
                     ) : (
-                      <Copy className="h-4 w-4" strokeWidth={2.2} />
+                      <Copy className="h-5 w-5" strokeWidth={2.2} />
                     )}
                   </div>
-                  <span className="mt-1.5 text-[10px] font-semibold text-[#102A43]">
+                  <span className="mt-2 text-[12.5px] sm:text-[13px] font-bold text-[#102A43]">
                     {copied ? 'Copied' : 'Copy Link'}
                   </span>
                 </button>
@@ -891,12 +876,12 @@ export default function App() {
                   type="button"
                   id="share-tile-qr"
                   onClick={() => setQrOpen(true)}
-                  className="card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border border-[#D9E2EC] bg-[#FFFFFF] p-2.5 text-center"
+                  className="card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border border-[#D9E2EC] bg-[#FFFFFF] p-3 text-center"
                 >
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#F0F4F8] text-[#1B5B63] transition-colors group-hover:bg-[#102A43] group-hover:text-[#F2B705] shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
-                    <QrCode className="h-4 w-4" strokeWidth={2.2} />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#F0F4F8] text-[#1B5B63] transition-colors group-hover:bg-[#102A43] group-hover:text-[#F2B705] shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
+                    <QrCode className="h-5 w-5" strokeWidth={2.2} />
                   </div>
-                  <span className="mt-1.5 text-[10px] font-semibold text-[#102A43]">
+                  <span className="mt-2 text-[12.5px] sm:text-[13px] font-bold text-[#102A43]">
                     QR Code
                   </span>
                 </button>
@@ -906,12 +891,12 @@ export default function App() {
                   type="button"
                   id="share-tile-more"
                   onClick={shareNative}
-                  className="card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border border-[#D9E2EC] bg-[#FFFFFF] p-2.5 text-center"
+                  className="card-elevation-interactive group flex flex-col items-center justify-center rounded-xl border border-[#D9E2EC] bg-[#FFFFFF] p-3 text-center"
                 >
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#F0F4F8] text-[#1B5B63] transition-colors group-hover:bg-[#102A43] group-hover:text-[#F2B705] shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
-                    <Share2 className="h-4 w-4" strokeWidth={2.2} />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#F0F4F8] text-[#1B5B63] transition-colors group-hover:bg-[#102A43] group-hover:text-[#F2B705] shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)]">
+                    <Share2 className="h-5 w-5" strokeWidth={2.2} />
                   </div>
-                  <span className="mt-1.5 text-[10px] font-semibold text-[#102A43]">
+                  <span className="mt-2 text-[12.5px] sm:text-[13px] font-bold text-[#102A43]">
                     More
                   </span>
                 </button>
@@ -920,7 +905,7 @@ export default function App() {
 
             {/* ========================================================
                 6. BUSINESS INFORMATION (Clean Editorial Panel)
-                Phone, Email, Website, ARN, Location
+                Phone, Email, Website, Registration & Credential, Location
                 ======================================================== */}
             <section id="business-info-section" aria-label="Business information" className="pt-2">
               <SectionDivider title="Business Details" />
@@ -929,43 +914,43 @@ export default function App() {
                 {/* 1. Phone & WhatsApp */}
                 <a
                   href={`tel:${BRAND.phoneRaw}`}
-                  className="group flex items-center justify-between p-3 transition hover:bg-[#F5F7F8]"
+                  className="group flex items-center justify-between p-3.5 transition hover:bg-[#F5F7F8]"
                 >
-                  <div className="flex items-center gap-3 min-w-0">
-                    <div className="flex h-7 w-7 items-center justify-center rounded-md bg-[#F0F4F8] text-[#1B5B63] group-hover:bg-[#102A43] group-hover:text-[#F2B705] transition-colors">
-                      <Phone className="h-3.5 w-3.5" />
+                  <div className="flex items-center gap-3.5 min-w-0">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#F0F4F8] text-[#1B5B63] group-hover:bg-[#102A43] group-hover:text-[#F2B705] transition-colors flex-shrink-0">
+                      <Phone className="h-4 w-4" />
                     </div>
                     <div className="min-w-0">
-                      <span className="block text-[9px] font-bold uppercase tracking-wider text-[#526777]">
+                      <span className="block text-[10.5px] sm:text-[11px] font-extrabold uppercase tracking-wider text-[#526777]">
                         PHONE & WHATSAPP
                       </span>
-                      <span className="block truncate text-xs font-bold text-[#102A43] group-hover:text-[#1B5B63]">
+                      <span className="block text-[15px] sm:text-[16px] font-bold text-[#102A43] group-hover:text-[#1B5B63]">
                         {BRAND.phone}
                       </span>
                     </div>
                   </div>
-                  <ChevronRight className="h-3.5 w-3.5 text-[#829AB1] group-hover:text-[#102A43]" />
+                  <ChevronRight className="h-4 w-4 text-[#829AB1] group-hover:text-[#102A43] flex-shrink-0" />
                 </a>
 
                 {/* 2. Email */}
                 <a
                   href={mailtoHref}
-                  className="group flex items-center justify-between p-3 transition hover:bg-[#F5F7F8]"
+                  className="group flex items-center justify-between p-3.5 transition hover:bg-[#F5F7F8]"
                 >
-                  <div className="flex items-center gap-3 min-w-0">
-                    <div className="flex h-7 w-7 items-center justify-center rounded-md bg-[#F0F4F8] text-[#1B5B63] group-hover:bg-[#102A43] group-hover:text-[#F2B705] transition-colors">
-                      <Mail className="h-3.5 w-3.5" />
+                  <div className="flex items-center gap-3.5 min-w-0">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#F0F4F8] text-[#1B5B63] group-hover:bg-[#102A43] group-hover:text-[#F2B705] transition-colors flex-shrink-0">
+                      <Mail className="h-4 w-4" />
                     </div>
                     <div className="min-w-0">
-                      <span className="block text-[9px] font-bold uppercase tracking-wider text-[#526777]">
+                      <span className="block text-[10.5px] sm:text-[11px] font-extrabold uppercase tracking-wider text-[#526777]">
                         EMAIL
                       </span>
-                      <span className="block truncate text-xs font-bold text-[#102A43] group-hover:text-[#1B5B63]">
+                      <span className="block break-all text-[15px] sm:text-[16px] font-bold text-[#102A43] group-hover:text-[#1B5B63]">
                         {BRAND.email}
                       </span>
                     </div>
                   </div>
-                  <ChevronRight className="h-3.5 w-3.5 text-[#829AB1] group-hover:text-[#102A43]" />
+                  <ChevronRight className="h-4 w-4 text-[#829AB1] group-hover:text-[#102A43] flex-shrink-0" />
                 </a>
 
                 {/* 3. Website */}
@@ -973,49 +958,54 @@ export default function App() {
                   href={BRAND.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-between p-3 transition hover:bg-[#F5F7F8]"
+                  className="group flex items-center justify-between p-3.5 transition hover:bg-[#F5F7F8]"
                 >
-                  <div className="flex items-center gap-3 min-w-0">
-                    <div className="flex h-7 w-7 items-center justify-center rounded-md bg-[#F0F4F8] text-[#1B5B63] group-hover:bg-[#102A43] group-hover:text-[#F2B705] transition-colors">
-                      <Globe className="h-3.5 w-3.5" />
+                  <div className="flex items-center gap-3.5 min-w-0">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#F0F4F8] text-[#1B5B63] group-hover:bg-[#102A43] group-hover:text-[#F2B705] transition-colors flex-shrink-0">
+                      <Globe className="h-4 w-4" />
                     </div>
                     <div className="min-w-0">
-                      <span className="block text-[9px] font-bold uppercase tracking-wider text-[#526777]">
+                      <span className="block text-[10.5px] sm:text-[11px] font-extrabold uppercase tracking-wider text-[#526777]">
                         WEBSITE
                       </span>
-                      <span className="block truncate text-xs font-bold text-[#102A43] group-hover:text-[#1B5B63]">
+                      <span className="block text-[15px] sm:text-[16px] font-bold text-[#102A43] group-hover:text-[#1B5B63]">
                         {BRAND.websiteDisplay}
                       </span>
                     </div>
                   </div>
-                  <ArrowUpRight className="h-3.5 w-3.5 text-[#829AB1] group-hover:text-[#102A43]" />
+                  <ArrowUpRight className="h-4 w-4 text-[#829AB1] group-hover:text-[#102A43] flex-shrink-0" />
                 </a>
 
-                {/* 4. ARN & AMFI Registration */}
-                <div className="flex items-center gap-3 p-3">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-md bg-[#F0F4F8] text-[#1B5B63]">
-                    <Check className="h-3.5 w-3.5 stroke-[2.5]" />
+                {/* 4. ARN & AMFI Registration (Multi-line layout, zero clipping) */}
+                <div className="flex items-start gap-3.5 p-3.5">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#F0F4F8] text-[#1B5B63] flex-shrink-0 mt-0.5">
+                    <Check className="h-4 w-4 stroke-[2.5]" />
                   </div>
-                  <div className="min-w-0">
-                    <span className="block text-[9px] font-bold uppercase tracking-wider text-[#526777]">
+                  <div className="min-w-0 flex-1">
+                    <span className="block text-[10.5px] sm:text-[11px] font-extrabold uppercase tracking-wider text-[#526777]">
                       REGISTRATION & CREDENTIAL
                     </span>
-                    <span className="block truncate text-xs font-bold text-[#102A43]">
-                      {BRAND.credential} ({BRAND.arn})
-                    </span>
+                    <div className="mt-0.5 space-y-0.5">
+                      <span className="block text-[14.5px] sm:text-[15.5px] font-bold text-[#102A43] leading-snug">
+                        {BRAND.credential}
+                      </span>
+                      <span className="inline-block rounded bg-[#F0F4F8] border border-[#D9E2EC] px-2 py-0.5 text-[12.5px] sm:text-[13px] font-black font-mono text-[#1B5B63]">
+                        {BRAND.arn}
+                      </span>
+                    </div>
                   </div>
                 </div>
 
                 {/* 5. Location */}
-                <div className="flex items-center gap-3 p-3">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-md bg-[#F0F4F8] text-[#1B5B63]">
-                    <MapPin className="h-3.5 w-3.5" />
+                <div className="flex items-center gap-3.5 p-3.5">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#F0F4F8] text-[#1B5B63] flex-shrink-0">
+                    <MapPin className="h-4 w-4" />
                   </div>
                   <div className="min-w-0">
-                    <span className="block text-[9px] font-bold uppercase tracking-wider text-[#526777]">
+                    <span className="block text-[10.5px] sm:text-[11px] font-extrabold uppercase tracking-wider text-[#526777]">
                       LOCATION
                     </span>
-                    <span className="block truncate text-xs font-bold text-[#102A43]">
+                    <span className="block text-[14.5px] sm:text-[15.5px] font-bold text-[#102A43]">
                       {BRAND.location}
                     </span>
                   </div>
@@ -1027,14 +1017,12 @@ export default function App() {
           {/* ========================================================
               7. FOOTER (Ultra-Premium Corporate FinTech Brand Signature)
               Brand Header with Real Logo & Slogan
-              Compact Contact Chips (Phone, Email, Web)
-              Circular Social Connect (WhatsApp & Facebook)
-              Professional AMFI Credential Lockup
-              Regulatory Disclaimer & Copyright
+              Phone, Email, Website & Social Connect
+              Credential & Regulatory Disclaimer
               ======================================================== */}
           <footer
             id="finrev-footer"
-            className="bg-gradient-to-b from-[#102A43] via-[#0E243A] to-[#0B1F33] px-4 py-4 sm:py-5 text-center text-white relative overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] border-t border-[#1B5B63]/40"
+            className="bg-gradient-to-b from-[#102A43] via-[#0E243A] to-[#0B1F33] px-4 py-5 sm:py-6 text-center text-white relative overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] border-t border-[#1B5B63]/40"
           >
             {/* Top Gold Accent Line */}
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#F2B705] to-transparent opacity-85" />
@@ -1042,111 +1030,112 @@ export default function App() {
             {/* Subtle Ambient Teal Glow */}
             <div className="pointer-events-none absolute -top-12 left-1/2 -translate-x-1/2 h-24 w-60 rounded-full bg-[#1B5B63]/15 blur-2xl" />
 
-            <div className="relative z-10 max-w-md mx-auto">
+            <div className="relative z-10 max-w-md mx-auto space-y-3.5">
               {/* 1. Brand Header Lockup */}
               <div className="flex flex-col items-center">
-                <div className="mb-1.5 flex h-9 w-9 items-center justify-center rounded-xl bg-white p-1 shadow-[0_3px_10px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.9)] border border-[#F2B705]/40">
+                <div className="mb-2 flex h-11 w-11 items-center justify-center rounded-xl bg-white p-1.5 shadow-[0_3px_10px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.9)] border border-[#F2B705]/40">
                   <img
                     src={logoUrl}
                     alt="FinRev Solutions Logo"
                     className="h-full w-full object-contain"
                   />
                 </div>
-                <h3 className="text-[11.5px] font-extrabold uppercase tracking-[0.24em] text-white">
+                <h3 className="text-[15px] sm:text-[16px] font-black uppercase tracking-[0.22em] text-white">
                   {BRAND.name}
                 </h3>
-                <p className="mt-0.5 text-[10.5px] font-medium tracking-wide text-[#AFC3CE]">
+                <p className="mt-0.5 text-[12.5px] sm:text-[13px] font-bold tracking-wide text-[#F2B705]">
                   {BRAND.tagline}
                 </p>
 
                 {/* Subtle Premium Gold Accent Line with Dot */}
-                <div className="my-2 flex items-center justify-center gap-1.5">
-                  <div className="h-[1px] w-8 bg-gradient-to-r from-transparent to-[#1B5B63]" />
-                  <span className="h-1 w-1 rotate-45 bg-[#F2B705] shadow-[0_0_4px_rgba(242,183,5,0.7)]" />
-                  <div className="h-[1px] w-8 bg-gradient-to-l from-transparent to-[#1B5B63]" />
+                <div className="my-2.5 flex items-center justify-center gap-2">
+                  <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-[#1B5B63]" />
+                  <span className="h-1.5 w-1.5 rotate-45 bg-[#F2B705] shadow-[0_0_4px_rgba(242,183,5,0.7)]" />
+                  <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-[#1B5B63]" />
                 </div>
               </div>
 
-              {/* 2. Contact Information (Premium Compact Chips) */}
-              <div className="flex flex-wrap items-center justify-center gap-1.5 text-xs">
-                <a
-                  href={`tel:${BRAND.phoneRaw}`}
-                  className="inline-flex items-center gap-1.5 rounded-lg bg-white/[0.06] border border-[#1B5B63]/40 px-2.5 py-1 text-[11px] font-semibold text-[#AFC3CE] hover:text-[#F2B705] hover:border-[#F2B705]/50 hover:bg-white/10 transition-all duration-200 active:scale-95 shadow-xs"
-                >
-                  <Phone className="h-2.5 w-2.5 text-[#F2B705]" />
-                  <span>9835592142</span>
-                </a>
-
-                <a
-                  href={mailtoHref}
-                  className="inline-flex items-center gap-1.5 rounded-lg bg-white/[0.06] border border-[#1B5B63]/40 px-2.5 py-1 text-[11px] font-semibold text-[#AFC3CE] hover:text-[#F2B705] hover:border-[#F2B705]/50 hover:bg-white/10 transition-all duration-200 active:scale-95 shadow-xs"
-                >
-                  <Mail className="h-2.5 w-2.5 text-[#F2B705]" />
-                  <span>info@finrevsolutions.com</span>
-                </a>
-
-                <a
-                  href={BRAND.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-lg bg-white/[0.06] border border-[#1B5B63]/40 px-2.5 py-1 text-[11px] font-semibold text-[#AFC3CE] hover:text-[#F2B705] hover:border-[#F2B705]/50 hover:bg-white/10 transition-all duration-200 active:scale-95 shadow-xs"
-                >
-                  <Globe className="h-2.5 w-2.5 text-[#F2B705]" />
-                  <span>finrevsolutions.com</span>
-                </a>
+              {/* 2. Direct Contact Chips: 9835592142 • info@finrevsolutions.com • finrevsolutions.com */}
+              <div className="space-y-1.5 text-xs">
+                <div className="flex flex-wrap items-center justify-center gap-2 text-[13px] sm:text-[14px] font-bold text-white/95">
+                  <a
+                    href={`tel:${BRAND.phoneRaw}`}
+                    className="hover:text-[#F2B705] transition-colors"
+                  >
+                    9835592142
+                  </a>
+                  <span className="text-[#F2B705]">•</span>
+                  <a
+                    href={mailtoHref}
+                    className="hover:text-[#F2B705] transition-colors break-all"
+                  >
+                    info@finrevsolutions.com
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href={BRAND.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[13px] sm:text-[13.5px] font-semibold text-[#AFC3CE] hover:text-[#F2B705] transition-colors"
+                  >
+                    finrevsolutions.com
+                  </a>
+                </div>
               </div>
 
-              {/* 3. Connect (WhatsApp & Facebook Circular Buttons) */}
-              <div className="mt-2.5 flex items-center justify-center gap-2">
-                <span className="text-[9px] font-extrabold uppercase tracking-[0.18em] text-[#AFC3CE]/70 mr-0.5">
-                  CONNECT:
+              {/* 3. Connect: WhatsApp & Facebook */}
+              <div className="flex items-center justify-center gap-2.5 pt-1">
+                <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#AFC3CE]/80 mr-0.5">
+                  CONNECT
                 </span>
                 <a
                   href={waChatHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Connect on WhatsApp"
-                  className="flex h-7 w-7 items-center justify-center rounded-full bg-[#0B1F33] text-white border border-[#1B5B63]/60 shadow-[0_2px_6px_rgba(0,0,0,0.3)] transition-all duration-200 hover:border-[#F2B705] hover:-translate-y-0.5 hover:bg-[#102A43] hover:text-[#25D366] active:scale-95"
+                  className="flex h-8.5 w-8.5 items-center justify-center rounded-full bg-[#0B1F33] text-white border border-[#1B5B63]/60 shadow-[0_2px_6px_rgba(0,0,0,0.3)] transition-all duration-200 hover:border-[#F2B705] hover:-translate-y-0.5 hover:bg-[#102A43] hover:text-[#25D366] active:scale-95"
                 >
-                  <WhatsAppIcon className="h-3 w-3" />
+                  <WhatsAppIcon className="h-4 w-4" />
                 </a>
                 <a
                   href={BRAND.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Connect on Facebook"
-                  className="flex h-7 w-7 items-center justify-center rounded-full bg-[#0B1F33] text-white border border-[#1B5B63]/60 shadow-[0_2px_6px_rgba(0,0,0,0.3)] transition-all duration-200 hover:border-[#F2B705] hover:-translate-y-0.5 hover:bg-[#102A43] hover:text-[#1877F2] active:scale-95"
+                  className="flex h-8.5 w-8.5 items-center justify-center rounded-full bg-[#0B1F33] text-white border border-[#1B5B63]/60 shadow-[0_2px_6px_rgba(0,0,0,0.3)] transition-all duration-200 hover:border-[#F2B705] hover:-translate-y-0.5 hover:bg-[#102A43] hover:text-[#1877F2] active:scale-95"
                 >
-                  <Facebook className="h-3 w-3" />
+                  <Facebook className="h-4 w-4" />
                 </a>
               </div>
 
               {/* 4. Professional Credential Lockup */}
-              <div className="mt-2.5 pt-2 border-t border-white/[0.08]">
-                <div className="text-[11px] text-white font-bold tracking-tight">
+              <div className="pt-3 border-t border-white/[0.12] space-y-1.5">
+                <div className="text-[14px] sm:text-[15px] text-white font-bold tracking-tight">
                   <span>{BRAND.person}</span>
-                  <span className="mx-1.5 text-[#F2B705]">•</span>
-                  <span className="text-[#AFC3CE] font-medium">{BRAND.role}</span>
+                  <span className="mx-2 text-[#F2B705]">•</span>
+                  <span className="text-[#D9E2EC] font-semibold">{BRAND.role}</span>
                 </div>
-                <div className="mt-0.5 text-[9.5px] text-[#AFC3CE]/90 font-medium flex items-center justify-center gap-1.5 flex-wrap">
+                <div className="text-[12.5px] sm:text-[13px] text-[#AFC3CE] font-semibold flex items-center justify-center gap-2 flex-wrap">
                   <span>AMFI Registered Mutual Fund Distributor</span>
                   <span className="text-[#F2B705]">•</span>
-                  <span className="rounded bg-[#1B5B63]/30 px-1.5 py-0.2 text-[9px] font-bold text-[#F2B705] border border-[#F2B705]/30 tracking-wider">
+                  <span className="rounded bg-[#1B5B63]/40 px-2.5 py-0.5 text-[11px] font-black text-[#F2B705] border border-[#F2B705]/40 tracking-wider font-mono">
                     {BRAND.arn}
                   </span>
                 </div>
               </div>
 
               {/* 5. Regulatory Disclaimer */}
-              <div className="mt-2 max-w-[90%] mx-auto">
-                <p className="text-[8.5px] leading-tight text-[#AFC3CE]/65 font-normal">
-                  Mutual Fund investments are subject to market risks. Please read all scheme related documents carefully before investing.
+              <div className="max-w-[96%] mx-auto pt-1">
+                <p className="text-[12px] sm:text-[12.5px] leading-relaxed text-[#AFC3CE]/90 font-normal">
+                  Mutual Fund investments are subject to market risks.
+                  <br className="hidden sm:inline" /> Please read all scheme related documents carefully before investing.
                 </p>
               </div>
 
               {/* 6. Copyright */}
-              <div className="mt-2 border-t border-white/[0.08] pt-1.5">
-                <p className="text-[8.5px] font-medium text-[#AFC3CE]/45 tracking-wider">
+              <div className="border-t border-white/[0.1] pt-2.5">
+                <p className="text-[11.5px] sm:text-[12px] font-medium text-[#AFC3CE]/70 tracking-wider">
                   © 2026 {BRAND.name}. All Rights Reserved.
                 </p>
               </div>
@@ -1171,30 +1160,30 @@ export default function App() {
             type="button"
             aria-label="Close service details overlay"
             onClick={closeServiceModal}
-            className="animate-fade-in fixed inset-0 h-full w-full bg-black/75 backdrop-blur-sm cursor-default"
+            className="animate-fade-in fixed inset-0 h-full w-full bg-black/80 backdrop-blur-sm cursor-default"
           />
 
           {/* Modal Container */}
-          <div className="animate-sheet-up card-elevation-1 relative z-10 w-full max-w-[420px] max-h-[88vh] flex flex-col overflow-hidden rounded-t-[22px] sm:rounded-[22px] border border-[#D9E2EC] bg-[#FFFFFF] text-left text-[#102A43] shadow-[0_20px_50px_rgba(16,42,67,0.35)]">
+          <div className="animate-sheet-up card-elevation-1 relative z-10 w-full max-w-[440px] max-h-[88vh] flex flex-col overflow-hidden rounded-t-[24px] sm:rounded-[24px] border border-[#D9E2EC] bg-[#FFFFFF] text-left text-[#102A43] shadow-[0_24px_60px_rgba(16,42,67,0.4)]">
             {/* Subtle Gold Accent Bar */}
-            <div className="h-1.5 w-full bg-gradient-to-r from-[#D49E00] via-[#F2B705] to-[#D49E00] flex-shrink-0" />
+            <div className="h-2 w-full bg-gradient-to-r from-[#D49E00] via-[#F2B705] to-[#D49E00] flex-shrink-0" />
 
             {/* Header: [Service Icon] SERVICE NAME [X] */}
-            <div className="flex items-start justify-between gap-3 px-5 py-4 border-b border-[#D9E2EC]/80 bg-gradient-to-b from-[#F5F7F8] to-[#FFFFFF] flex-shrink-0">
-              <div className="flex items-center gap-3 min-w-0">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#102A43] to-[#163A5F] text-[#F2B705] shadow-[0_3px_8px_rgba(16,42,67,0.2),inset_0_1px_0_rgba(255,255,255,0.2)]">
+            <div className="flex items-start justify-between gap-3.5 px-5 py-4 border-b border-[#D9E2EC]/80 bg-gradient-to-b from-[#F5F7F8] to-[#FFFFFF] flex-shrink-0">
+              <div className="flex items-center gap-3.5 min-w-0">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#102A43] to-[#163A5F] text-[#F2B705] shadow-[0_3px_8px_rgba(16,42,67,0.2),inset_0_1px_0_rgba(255,255,255,0.2)]">
                   {(() => {
                     const ModalIcon = selectedService.icon
-                    return <ModalIcon className="h-5 w-5" strokeWidth={2.2} />
+                    return <ModalIcon className="h-6.5 w-6.5" strokeWidth={2.2} />
                   })()}
                 </div>
                 <div className="min-w-0">
-                  <span className="block text-[9px] font-extrabold uppercase tracking-[0.18em] text-[#1B5B63]">
+                  <span className="block text-[11px] sm:text-[12px] font-extrabold uppercase tracking-[0.2em] text-[#1B5B63]">
                     FINREV SERVICES
                   </span>
                   <h3
                     id="service-modal-title"
-                    className="text-sm sm:text-base font-extrabold tracking-tight text-[#102A43] leading-tight truncate"
+                    className="text-[20px] sm:text-[22px] font-black tracking-tight text-[#102A43] leading-tight truncate"
                   >
                     {selectedService.title}
                   </h3>
@@ -1206,35 +1195,35 @@ export default function App() {
                 id="service-modal-close"
                 onClick={closeServiceModal}
                 aria-label="Close service details"
-                className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#F0F4F8] text-[#526777] hover:bg-[#102A43] hover:text-[#F2B705] transition-colors shadow-sm"
+                className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#F0F4F8] text-[#526777] hover:bg-[#102A43] hover:text-[#F2B705] transition-colors shadow-sm"
               >
-                <X className="h-4 w-4" strokeWidth={2.4} />
+                <X className="h-5 w-5" strokeWidth={2.4} />
               </button>
             </div>
 
             {/* Scrollable Content Body */}
             <div className="overflow-y-auto px-5 py-4 space-y-4">
               {/* Short Professional Description */}
-              <p className="text-xs sm:text-[13px] leading-relaxed text-[#526777] font-medium">
+              <p className="text-[15px] sm:text-[16px] leading-relaxed text-[#334E68] font-medium">
                 {selectedService.description}
               </p>
 
               {/* WHAT WE OFFER */}
               <div>
-                <div className="flex items-center gap-1.5 mb-2">
-                  <span className="h-1.5 w-1.5 rotate-45 bg-[#F2B705]" />
-                  <h4 className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#102A43]">
+                <div className="flex items-center gap-2 mb-2.5">
+                  <span className="h-2.5 w-2.5 rotate-45 bg-[#F2B705]" />
+                  <h4 className="text-[13px] sm:text-[14px] font-black uppercase tracking-[0.18em] text-[#102A43]">
                     WHAT WE OFFER
                   </h4>
                 </div>
-                <ul className="space-y-1.5">
+                <ul className="space-y-2.5">
                   {selectedService.offers.map((offer, oIdx) => (
                     <li
                       key={oIdx}
-                      className="flex items-start gap-2.5 rounded-lg border border-[#D9E2EC]/70 bg-[#F5F7F8]/80 p-2 text-xs font-semibold text-[#102A43]"
+                      className="flex items-start gap-3 rounded-xl border border-[#D9E2EC]/80 bg-[#F5F7F8] p-3.5 text-[15px] sm:text-[16px] font-semibold text-[#102A43]"
                     >
-                      <span className="flex-shrink-0 mt-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#1B5B63] text-white shadow-xs">
-                        <Check className="h-2.5 w-2.5 stroke-[3]" />
+                      <span className="flex-shrink-0 mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-[#1B5B63] text-white shadow-xs">
+                        <Check className="h-3.5 w-3.5 stroke-[3]" />
                       </span>
                       <span>{offer}</span>
                     </li>
@@ -1243,18 +1232,18 @@ export default function App() {
               </div>
 
               {/* SUITABLE FOR */}
-              <div className="rounded-xl border border-[#D9E2EC] bg-[#F5F7F8] p-3">
-                <span className="block text-[9px] font-extrabold uppercase tracking-wider text-[#1B5B63]">
+              <div className="rounded-xl border border-[#D9E2EC] bg-[#F5F7F8] p-4">
+                <span className="block text-[12px] font-extrabold uppercase tracking-wider text-[#1B5B63]">
                   SUITABLE FOR
                 </span>
-                <p className="mt-0.5 text-xs font-bold text-[#102A43]">
+                <p className="mt-1 text-[15px] sm:text-[16px] font-bold text-[#102A43]">
                   {selectedService.suitableFor}
                 </p>
               </div>
 
               {/* Compliance & Risk Disclaimer */}
               {selectedService.disclaimer && (
-                <p className="text-[10px] italic leading-relaxed text-[#829AB1] pt-1">
+                <p className="text-[12px] sm:text-[12.5px] italic leading-relaxed text-[#829AB1] pt-1">
                   * {selectedService.disclaimer}
                 </p>
               )}
@@ -1267,11 +1256,11 @@ export default function App() {
                 href={`https://wa.me/${BRAND.whatsappNumber}?text=${encodeURIComponent(selectedService.waMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-tactile-primary group flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#102A43] via-[#163A5F] to-[#102A43] py-3 px-4 text-xs font-extrabold uppercase tracking-wider text-white border border-[#163A5F] shadow-md hover:shadow-lg transition-all"
+                className="btn-tactile-primary group flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-[#102A43] via-[#163A5F] to-[#102A43] py-4 px-5 text-[16px] sm:text-[17px] font-black uppercase tracking-wider text-white border border-[#163A5F] shadow-md hover:shadow-lg transition-all"
               >
-                <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
+                <WhatsAppIcon className="h-5.5 w-5.5 text-[#25D366]" />
                 <span>{selectedService.ctaText}</span>
-                <ArrowUpRight className="h-3.5 w-3.5 text-[#F2B705] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <ArrowUpRight className="h-4.5 w-4.5 text-[#F2B705] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
             </div>
           </div>
@@ -1296,46 +1285,46 @@ export default function App() {
             className="animate-fade-in fixed inset-0 h-full w-full bg-black/80 backdrop-blur-sm"
           />
 
-          <div className="animate-qr-in card-elevation-1 relative z-10 w-full max-w-[320px] overflow-hidden rounded-2xl border border-[#D9E2EC] bg-[#FFFFFF] p-5 text-center text-[#102A43]">
+          <div className="animate-qr-in card-elevation-1 relative z-10 w-full max-w-[340px] overflow-hidden rounded-2xl border border-[#D9E2EC] bg-[#FFFFFF] p-5 sm:p-6 text-center text-[#102A43]">
             {/* Top gold accent line */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D49E00] via-[#F2B705] to-[#D49E00]" />
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#D49E00] via-[#F2B705] to-[#D49E00]" />
 
             <button
               type="button"
               id="qr-modal-close"
               onClick={() => setQrOpen(false)}
               aria-label="Close"
-              className="absolute top-3.5 right-3.5 flex h-7 w-7 items-center justify-center rounded-full bg-[#F0F4F8] text-[#526777] hover:text-[#102A43] transition"
+              className="absolute top-3.5 right-3.5 flex h-8 w-8 items-center justify-center rounded-full bg-[#F0F4F8] text-[#526777] hover:text-[#102A43] transition"
             >
-              <X className="h-4 w-4" />
+              <X className="h-4.5 w-4.5" />
             </button>
 
             <div className="mx-auto w-fit">
               <img
                 src={logoUrl}
                 alt="FinRev Solutions"
-                className="h-6 w-auto object-contain"
+                className="h-7 w-auto object-contain"
               />
             </div>
 
-            <h3 className="mt-3 text-sm font-extrabold text-[#102A43]">
+            <h3 className="mt-3 text-[16px] sm:text-[17px] font-extrabold text-[#102A43]">
               Scan to View Digital Card
             </h3>
-            <p className="text-[11px] text-[#526777]">
+            <p className="text-[12px] sm:text-[13px] text-[#526777]">
               Point your camera at this QR code
             </p>
 
-            <div className="mx-auto mt-3.5 w-fit rounded-xl border border-[#D9E2EC] bg-white p-3 shadow-sm">
+            <div className="mx-auto mt-4 w-fit rounded-xl border border-[#D9E2EC] bg-white p-3.5 shadow-sm">
               <img
                 src={BRAND.qrImage}
                 alt="QR Code"
                 width="180"
                 height="180"
-                className="h-40 w-40 object-contain"
+                className="h-44 w-44 object-contain"
               />
             </div>
 
-            <div className="mt-4 space-y-2">
+            <div className="mt-4 space-y-2.5">
               <button
                 type="button"
                 id="modal-copy-link"
@@ -1343,16 +1332,16 @@ export default function App() {
                   copyLink()
                   setQrOpen(false)
                 }}
-                className="btn-tactile-primary flex w-full items-center justify-center gap-2 rounded-lg bg-[#102A43] hover:bg-[#163A5F] py-2 text-xs font-bold text-white transition"
+                className="btn-tactile-primary flex w-full items-center justify-center gap-2 rounded-xl bg-[#102A43] hover:bg-[#163A5F] py-2.5 text-[13.5px] font-bold text-white transition"
               >
-                <Copy className="h-3.5 w-3.5 text-[#F2B705]" />
+                <Copy className="h-4 w-4 text-[#F2B705]" />
                 <span>Copy Card Link</span>
               </button>
 
               <button
                 type="button"
                 onClick={() => setQrOpen(false)}
-                className="w-full rounded-lg border border-[#D9E2EC] bg-[#F5F7F8] py-1.5 text-xs font-semibold text-[#102A43] hover:bg-[#E8EFF5] transition"
+                className="w-full rounded-xl border border-[#D9E2EC] bg-[#F5F7F8] py-2 text-[13px] font-semibold text-[#102A43] hover:bg-[#E8EFF5] transition"
               >
                 Close
               </button>
@@ -1379,52 +1368,57 @@ export default function App() {
             className="animate-fade-in fixed inset-0 h-full w-full bg-black/80 backdrop-blur-sm"
           />
 
-          <div className="animate-qr-in card-elevation-1 relative z-10 w-full max-w-[320px] overflow-hidden rounded-2xl border border-[#D9E2EC] bg-[#FFFFFF] p-5 text-center text-[#102A43]">
+          <div className="animate-qr-in card-elevation-1 relative z-10 w-full max-w-[340px] overflow-hidden rounded-2xl border border-[#D9E2EC] bg-[#FFFFFF] p-5 sm:p-6 text-center text-[#102A43]">
             {/* Top gold accent line */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D49E00] via-[#F2B705] to-[#D49E00]" />
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#D49E00] via-[#F2B705] to-[#D49E00]" />
 
             <button
               type="button"
               id="photo-modal-close"
               onClick={() => setPhotoModalOpen(false)}
               aria-label="Close"
-              className="absolute top-3.5 right-3.5 flex h-7 w-7 items-center justify-center rounded-full bg-[#F0F4F8] text-[#526777] hover:text-[#102A43] transition"
+              className="absolute top-3.5 right-3.5 flex h-8 w-8 items-center justify-center rounded-full bg-[#F0F4F8] text-[#526777] hover:text-[#102A43] transition"
             >
-              <X className="h-4 w-4" />
+              <X className="h-4.5 w-4.5" />
             </button>
 
-            <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-[#F0F4F8] text-[#102A43] shadow-sm">
+            <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-[#F0F4F8] text-[#102A43] shadow-sm">
               <Camera className="h-5 w-5 text-[#1B5B63]" />
             </div>
 
-            <h3 className="mt-2 text-sm font-extrabold text-[#102A43]">
+            <h3 className="mt-2.5 text-[16px] sm:text-[17px] font-extrabold text-[#102A43]">
               Profile Photo
             </h3>
-            <p className="text-[11px] text-[#526777]">
-              Upload your executive portrait for your visiting card
+            <p className="text-[12px] sm:text-[13px] text-[#526777]">
+              Upload your executive portrait for your digital card
             </p>
 
             <div className="my-4 flex justify-center">
-              <div className="h-20 w-20 rounded-full p-[2px] bg-gradient-to-tr from-[#102A43] via-[#F2B705] to-[#1B5B63] shadow-md overflow-hidden">
+              <div className="h-28 w-28 rounded-full p-[2.5px] bg-gradient-to-tr from-[#102A43] via-[#F2B705] to-[#1B5B63] shadow-md overflow-hidden">
                 <div className="h-full w-full rounded-full bg-[#F0F4F8] overflow-hidden flex items-center justify-center">
-                  {customPhoto ? (
-                    <img src={customPhoto} alt="Portrait" className="h-full w-full object-cover" />
-                  ) : (
-                    <span className="text-xl font-black text-[#102A43]">PK</span>
-                  )}
+                  <img
+                    src={customPhoto || pkPhotoUrl}
+                    alt="Panchanan Kumar"
+                    className="h-full w-full object-cover object-center"
+                    onError={(e) => {
+                      if (!e.currentTarget.src.includes('pk-photo.jpg')) {
+                        e.currentTarget.src = './pk-photo.jpg'
+                      }
+                    }}
+                  />
                 </div>
               </div>
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-2.5">
               <button
                 type="button"
                 id="photo-upload-btn"
                 onClick={() => fileInputRef.current?.click()}
-                className="btn-tactile-primary flex w-full items-center justify-center gap-2 rounded-lg bg-[#102A43] hover:bg-[#163A5F] py-2 text-xs font-bold text-white"
+                className="btn-tactile-primary flex w-full items-center justify-center gap-2 rounded-xl bg-[#102A43] hover:bg-[#163A5F] py-3 text-[14px] font-bold text-white shadow-sm"
               >
-                <UploadCloud className="h-3.5 w-3.5 text-[#F2B705]" />
-                <span>Upload Photo</span>
+                <UploadCloud className="h-4.5 w-4.5 text-[#F2B705]" />
+                <span>Upload Custom Photo</span>
               </button>
 
               {customPhoto && (
@@ -1432,19 +1426,19 @@ export default function App() {
                   type="button"
                   id="photo-reset-btn"
                   onClick={removePhoto}
-                  className="flex w-full items-center justify-center gap-2 rounded-lg border border-rose-200 bg-rose-50 py-1.5 text-xs font-medium text-rose-700 hover:bg-rose-100 transition"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl border border-rose-200 bg-rose-50 py-2.5 text-[13px] font-semibold text-rose-700 hover:bg-rose-100 transition"
                 >
-                  <Trash2 className="h-3 w-3" />
-                  <span>Reset to Initials</span>
+                  <Trash2 className="h-4 w-4" />
+                  <span>Reset to Official Photo</span>
                 </button>
               )}
 
               <button
                 type="button"
                 onClick={() => setPhotoModalOpen(false)}
-                className="w-full rounded-lg border border-[#D9E2EC] bg-[#F5F7F8] py-1.5 text-xs font-semibold text-[#102A43] hover:bg-[#E8EFF5] transition"
+                className="w-full rounded-xl border border-[#D9E2EC] bg-[#F5F7F8] py-2.5 text-[13.5px] font-semibold text-[#102A43] hover:bg-[#E8EFF5] transition"
               >
-                Cancel
+                Close
               </button>
             </div>
           </div>
@@ -1458,9 +1452,9 @@ export default function App() {
         <div
           role="status"
           aria-live="polite"
-          className="animate-toast-in fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 rounded-full bg-[#102A43] border border-[#163A5F] px-4 py-2 text-xs font-semibold text-white shadow-2xl"
+          className="animate-toast-in fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 rounded-full bg-[#102A43] border border-[#163A5F] px-5 py-2.5 text-[13px] font-semibold text-white shadow-2xl"
         >
-          <Sparkles className="h-3.5 w-3.5 text-[#F2B705]" />
+          <Sparkles className="h-4 w-4 text-[#F2B705]" />
           <span>{toast}</span>
         </div>
       )}
