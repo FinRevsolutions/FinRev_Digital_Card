@@ -30,7 +30,7 @@ import {
 } from 'lucide-react'
 
 import logoUrl from './assets/logo.png'
-import pkPhotoUrl from './assets/pk-photo.jpg'
+import pkPhotoUrl from './assets/PK Photo.jpg'
 
 const BRAND = {
   name: 'FINREV SOLUTIONS',
@@ -530,13 +530,13 @@ export default function App() {
                 <div className="relative h-[132px] w-[132px] sm:h-[145px] sm:w-[145px] rounded-full border-[4.5px] border-[#FFFFFF] p-[3px] bg-gradient-to-tr from-[#102A43] via-[#F2B705] to-[#1B5B63] shadow-[0_16px_36px_-6px_rgba(16,42,67,0.5),0_6px_18px_rgba(0,0,0,0.2)]">
                   <div className="h-full w-full rounded-full overflow-hidden bg-[#F0F4F8] flex items-center justify-center">
                     <img
+                      id="profile-photo-img"
                       src={customPhoto || pkPhotoUrl}
                       alt="Panchanan Kumar - Mutual Fund Distributor"
                       className="h-full w-full object-cover object-center"
                       onError={(e) => {
-                        // Safe fallback to public root path
-                        if (!e.currentTarget.src.includes('pk-photo.jpg')) {
-                          e.currentTarget.src = './pk-photo.jpg'
+                        if (!e.currentTarget.src.includes('PK%20Photo.jpg') && !e.currentTarget.src.includes('PK Photo.jpg')) {
+                          e.currentTarget.src = './PK Photo.jpg'
                         }
                       }}
                     />
@@ -1401,8 +1401,8 @@ export default function App() {
                     alt="Panchanan Kumar"
                     className="h-full w-full object-cover object-center"
                     onError={(e) => {
-                      if (!e.currentTarget.src.includes('pk-photo.jpg')) {
-                        e.currentTarget.src = './pk-photo.jpg'
+                      if (!e.currentTarget.src.includes('PK%20Photo.jpg') && !e.currentTarget.src.includes('PK Photo.jpg')) {
+                        e.currentTarget.src = './PK Photo.jpg'
                       }
                     }}
                   />
